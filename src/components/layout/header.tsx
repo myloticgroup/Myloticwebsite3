@@ -1,7 +1,5 @@
-"use client";
-
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { BrandLogo } from "./brand-logo";
 import { DesktopNav } from "./desktop-nav";
 import { MobileNav } from "./mobile-nav";
@@ -45,7 +43,7 @@ export function Header() {
 
           {/* Right: CTA & Mobile Drawer Toggle */}
           <div className="flex items-center gap-3 shrink-0">
-            <Link href="/contact" className="hidden sm:inline-flex group">
+            <Link to="/contact" className="hidden sm:inline-flex group">
               <button
                 type="button"
                 className="px-5 py-2.5 rounded-lg bg-[#171A17] hover:bg-[#242622] active:scale-[0.98] text-[#F7F5EF] font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all duration-200 shadow-xs cursor-pointer"

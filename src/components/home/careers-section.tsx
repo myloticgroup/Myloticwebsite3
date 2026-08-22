@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Briefcase, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -65,7 +65,7 @@ export function CareersSection() {
 
               <div className="mt-8 pt-4 border-t border-[#E8E6DE]/70 flex items-center justify-between">
                 <Link
-                  href={`/careers/${job.slug}`}
+                  to={`/careers/${job.slug}`}
                   className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors"
                 >
                   <span>VIEW ROLE</span>
@@ -87,7 +87,7 @@ export function CareersSection() {
             </p>
           </div>
 
-          <Link href="/careers" className="group">
+          <Link to="/careers" className="group">
             <button
               type="button"
               className="px-6 py-3 rounded-lg bg-[#171A17] text-[#F7F5EF] hover:bg-[#242622] active:scale-[0.98] font-mono text-xs uppercase tracking-wider font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-xs"

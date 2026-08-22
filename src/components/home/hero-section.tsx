@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowRight, ArrowDown, Sparkles, Layers, Cpu, ShieldCheck, CheckCircle2, Activity } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -64,7 +64,7 @@ export function HeroSection() {
 
               {/* Action Buttons with Micro-interactions */}
               <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto animate-fade-up delay-200">
-                <Link href="/contact" className="w-full sm:w-auto group">
+                <Link to="/contact" className="w-full sm:w-auto group">
                   <button
                     type="button"
                     className="w-full sm:w-auto px-7 py-4 rounded-lg bg-[#171A17] hover:bg-[#242622] text-[#F7F5EF] font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-xs cursor-pointer"
@@ -74,7 +74,7 @@ export function HeroSection() {
                   </button>
                 </Link>
 
-                <Link href="#capabilities" className="w-full sm:w-auto group">
+                <a href="#capabilities" className="w-full sm:w-auto group">
                   <button
                     type="button"
                     className="w-full sm:w-auto px-7 py-4 rounded-lg border border-[#E8E6DE] bg-white hover:bg-[#F1F0EA] text-[#242622] font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] cursor-pointer shadow-2xs"
@@ -82,7 +82,7 @@ export function HeroSection() {
                     <span>EXPLORE CAPABILITIES</span>
                     <ArrowDown className="w-4 h-4 text-[#66705A] transition-transform duration-200 group-hover:translate-y-0.5" />
                   </button>
-                </Link>
+                </a>
               </div>
 
               {/* Core Feature Signals */}

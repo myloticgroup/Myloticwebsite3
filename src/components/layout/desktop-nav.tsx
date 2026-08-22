@@ -1,8 +1,5 @@
-"use client";
-
 import * as React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import {
   ChevronDown,
   Sparkles,
@@ -42,7 +39,8 @@ const industryIcons: Record<string, React.ReactNode> = {
 };
 
 export function DesktopNav() {
-  const pathname = usePathname();
+  const location = useLocation();
+  const pathname = location.pathname;
   const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null);
   const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
@@ -121,7 +119,7 @@ export function DesktopNav() {
                     <Sparkles className="w-3 h-3 text-[#66705A]" /> Practice Area
                   </span>
                   <h3 className="text-sm font-bold text-[#171A17] mb-2 leading-snug">
-                    AI & Intelligent Systems
+                    AI &amp; Intelligent Systems
                   </h3>
                   <p className="text-xs text-[#555850] leading-relaxed font-normal">
                     Deploying production-grade machine learning models, vector search, and automated workflows.
@@ -130,7 +128,7 @@ export function DesktopNav() {
 
                 <div className="pt-4 border-t border-[#E8E6DE] mt-4 flex flex-col gap-2">
                   <Link
-                    href="/solutions/ai"
+                    to="/solutions/ai"
                     onClick={closeDropdown}
                     className="inline-flex items-center gap-1 text-xs font-semibold text-[#66705A] hover:text-[#4C5642] transition-colors group"
                   >
@@ -138,7 +136,7 @@ export function DesktopNav() {
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
-                    href="/solutions"
+                    to="/solutions"
                     onClick={closeDropdown}
                     className="text-xs text-[#73766D] hover:text-[#242622] transition-colors"
                   >
@@ -152,7 +150,7 @@ export function DesktopNav() {
                 {solutionsData.map((solution) => (
                   <Link
                     key={solution.id}
-                    href={`/solutions/${solution.slug}`}
+                    to={`/solutions/${solution.slug}`}
                     onClick={closeDropdown}
                     className="group p-3 rounded-xl hover:bg-[#F7F5EF] border border-transparent hover:border-[#E8E6DE] transition-all duration-200 flex items-start gap-3"
                   >
@@ -217,7 +215,7 @@ export function DesktopNav() {
               {industriesData.map((industry) => (
                 <Link
                   key={industry.id}
-                  href={`/industries/${industry.slug}`}
+                  to={`/industries/${industry.slug}`}
                   onClick={closeDropdown}
                   className="group p-3 rounded-xl hover:bg-[#F7F5EF] border border-transparent hover:border-[#E8E6DE] transition-all duration-200 flex items-start gap-3"
                 >
@@ -239,7 +237,7 @@ export function DesktopNav() {
 
               <div className="pt-2 mt-1 border-t border-[#E8E6DE] px-3">
                 <Link
-                  href="/industries"
+                  to="/industries"
                   onClick={closeDropdown}
                   className="text-xs font-semibold text-[#66705A] hover:underline"
                 >
@@ -253,7 +251,7 @@ export function DesktopNav() {
 
       {/* 3. Technology */}
       <Link
-        href="/technology"
+        to="/technology"
         className={cn(
           "px-3 py-2 rounded-md transition-all duration-200",
           "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
@@ -266,7 +264,7 @@ export function DesktopNav() {
 
       {/* 4. Work */}
       <Link
-        href="/work"
+        to="/work"
         className={cn(
           "px-3 py-2 rounded-md transition-all duration-200",
           "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
@@ -279,7 +277,7 @@ export function DesktopNav() {
 
       {/* 5. Careers */}
       <Link
-        href="/careers"
+        to="/careers"
         className={cn(
           "px-3 py-2 rounded-md transition-all duration-200",
           "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
@@ -328,7 +326,7 @@ export function DesktopNav() {
           >
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E6DE] p-3 shadow-dropdown flex flex-col gap-1">
               <Link
-                href="/company"
+                to="/company"
                 onClick={closeDropdown}
                 className="group p-3 rounded-xl hover:bg-[#F7F5EF] transition-all duration-200 flex flex-col"
               >
@@ -341,12 +339,12 @@ export function DesktopNav() {
               </Link>
 
               <Link
-                href="/company/leadership"
+                to="/company/leadership"
                 onClick={closeDropdown}
                 className="group p-3 rounded-xl hover:bg-[#F7F5EF] transition-all duration-200 flex flex-col"
               >
                 <span className="text-sm font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors">
-                  Leadership & Governance
+                  Leadership &amp; Governance
                 </span>
                 <span className="text-xs text-[#555850] mt-0.5 font-normal">
                   Executive leadership and corporate governance.
@@ -354,7 +352,7 @@ export function DesktopNav() {
               </Link>
 
               <Link
-                href="/company/approach"
+                to="/company/approach"
                 onClick={closeDropdown}
                 className="group p-3 rounded-xl hover:bg-[#F7F5EF] transition-all duration-200 flex flex-col"
               >
@@ -372,7 +370,7 @@ export function DesktopNav() {
 
       {/* 7. Blog */}
       <Link
-        href="/blog"
+        to="/blog"
         className={cn(
           "px-3 py-2 rounded-md transition-all duration-200",
           "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",

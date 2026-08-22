@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -20,7 +20,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
       className={cn("flex items-center gap-1.5 text-xs font-mono text-slate-500", className)}
     >
       <Link
-        href="/"
+        to="/"
         className="hover:text-slate-900 transition-colors uppercase tracking-wider"
       >
         Home
@@ -39,7 +39,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
               </span>
             ) : (
               <Link
-                href={item.href}
+                to={item.href}
                 className="hover:text-slate-900 transition-colors uppercase tracking-wider"
               >
                 {item.label}

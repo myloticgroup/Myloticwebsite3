@@ -1,5 +1,4 @@
-import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -37,7 +36,7 @@ export function RelatedContent({
             </h3>
           </div>
           <Link
-            href="/contact"
+            to="/contact"
             className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider font-semibold text-[#171A17] hover:text-[#66705A] transition-colors"
           >
             <span>Start a conversation</span>
@@ -49,7 +48,7 @@ export function RelatedContent({
           {links.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="group p-6 rounded-2xl bg-white border border-[#E8E6DE] shadow-card hover:border-[#66705A]/40 transition-all flex flex-col justify-between"
             >
               <div>

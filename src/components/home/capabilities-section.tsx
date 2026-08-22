@@ -1,7 +1,5 @@
-"use client";
-
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Sparkles,
@@ -190,7 +188,7 @@ export function CapabilitiesSection() {
                 <div className="flex items-center gap-3 shrink-0">
                   {activeSolution.slug === "edtech-training" && (
                     <Link
-                      href="/contact/education-consultation"
+                      to="/contact/education-consultation"
                       className="px-3.5 py-2 rounded-lg bg-[#171A17] hover:bg-[#242622] text-[#F7F5EF] text-xs font-mono uppercase tracking-wider font-semibold transition-all inline-flex items-center gap-1.5 shadow-xs group"
                     >
                       <span>Free Consultation</span>
@@ -198,7 +196,7 @@ export function CapabilitiesSection() {
                     </Link>
                   )}
                   <Link
-                    href={`/solutions/${activeSolution.slug}`}
+                    to={`/solutions/${activeSolution.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider font-semibold text-[#171A17] hover:text-[#66705A] transition-colors group"
                   >
                     <span>Explore Practice</span>
@@ -271,7 +269,7 @@ export function CapabilitiesSection() {
                     <div className="flex flex-wrap items-center gap-3 pt-2">
                       {solution.slug === "edtech-training" && (
                         <Link
-                          href="/contact/education-consultation"
+                          to="/contact/education-consultation"
                           className="px-3 py-1.5 rounded-lg bg-[#171A17] text-[#F7F5EF] text-xs font-mono uppercase tracking-wider font-semibold inline-flex items-center gap-1.5 shadow-xs"
                         >
                           <span>Free Consultation</span>
@@ -279,7 +277,7 @@ export function CapabilitiesSection() {
                         </Link>
                       )}
                       <Link
-                        href={`/solutions/${solution.slug}`}
+                        to={`/solutions/${solution.slug}`}
                         className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-semibold text-[#171A17] hover:text-[#66705A] group"
                       >
                         <span>Explore Practice</span>

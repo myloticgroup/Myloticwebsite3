@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowRight, Landmark, BookOpen, Tv, Cpu, Sparkles, Code2, Globe } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -80,7 +80,7 @@ export function IndustriesSection() {
 
                 <div className="mt-8 pt-6 border-t border-[#E8E6DE]/70 flex items-center justify-between">
                   <Link
-                    href={`/industries/${industry.slug}`}
+                    to={`/industries/${industry.slug}`}
                     className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono uppercase tracking-wider font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors"
                   >
                     <span>Explore industry</span>

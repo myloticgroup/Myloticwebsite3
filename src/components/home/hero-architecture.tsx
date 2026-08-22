@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { Sparkles, Layers, Cpu, Cloud, CheckCircle2, ShieldCheck, Database, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";

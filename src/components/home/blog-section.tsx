@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -30,7 +30,7 @@ export function BlogSection() {
               Perspectives on applied artificial intelligence, distributed systems architecture, cloud infrastructure, and technical leadership.
             </p>
             <Link
-              href="/blog"
+              to="/blog"
               className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider font-semibold text-[#171A17] hover:text-[#66705A] transition-colors group mt-2"
             >
               <span>View All Blog Articles</span>
@@ -58,7 +58,7 @@ export function BlogSection() {
 
               {/* Center: Title & Short Excerpt */}
               <div className="lg:w-6/12 flex flex-col gap-1.5">
-                <Link href={`/blog/${post.slug}`} className="group-hover:text-[#4C5642] transition-colors">
+                <Link to={`/blog/${post.slug}`} className="group-hover:text-[#4C5642] transition-colors">
                   <h3 className="text-lg sm:text-xl font-bold text-[#171A17] leading-snug">
                     {post.title}
                   </h3>
@@ -86,7 +86,7 @@ export function BlogSection() {
                 </span>
 
                 <Link
-                  href={`/blog/${post.slug}`}
+                  to={`/blog/${post.slug}`}
                   className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors"
                 >
                   <span>READ ARTICLE</span>

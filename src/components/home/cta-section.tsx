@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Mail, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -32,7 +32,7 @@ export function CTASection() {
 
             {/* Primary & Secondary Action Buttons with Micro-interactions */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
-              <Link href="/contact" className="w-full sm:w-auto group">
+              <Link to="/contact" className="w-full sm:w-auto group">
                 <button
                   type="button"
                   className="w-full sm:w-auto px-8 py-4 rounded-lg bg-[#171A17] hover:bg-[#242622] text-[#F7F5EF] font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-xs cursor-pointer"
@@ -42,7 +42,7 @@ export function CTASection() {
                 </button>
               </Link>
 
-              <Link href="/solutions" className="w-full sm:w-auto group">
+              <Link to="/solutions" className="w-full sm:w-auto group">
                 <button
                   type="button"
                   className="w-full sm:w-auto px-8 py-4 rounded-lg border border-[#E8E6DE] bg-white hover:bg-[#F7F5EF] text-[#171A17] font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold transition-all active:scale-[0.98] cursor-pointer shadow-2xs"

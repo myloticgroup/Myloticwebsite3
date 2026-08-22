@@ -2,32 +2,40 @@ import { EdTechConsultationLead } from "@/types/consultation.types";
 
 /**
  * EdTech Consultation Lead Ingestion Pipeline
- * 
- * Clean API-ready architecture isolating the lead dispatch layer.
- * Ready for downstream CRM / Webhook / Email / DB integration.
+ * Connects directly to Express backend API (/api/consultations).
  */
 export async function submitEdTechConsultationLead(
   lead: Omit<EdTechConsultationLead, "id" | "source" | "status" | "submittedAt">
 ): Promise<{ success: boolean; leadId: string; message: string }> {
-  const leadPayload: EdTechConsultationLead = {
-    id: `edtech-lead-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
-    source: "EdTech Consultation",
-    ...lead,
-    status: "New",
-    submittedAt: new Date().toISOString(),
-  };
+  try {
+    const payload = {
+      ...lead,
+      organization: lead.company,
+      role: lead.jobTitle,
+      educationRequirement: lead.requirement,
+    };
 
-  // Structured telemetry logging for administrative traceability
-  if (process.env.NODE_ENV !== "production") {
-    console.info("[Mylotic Lead Pipeline] EdTech Consultation Payload Ingested:", leadPayload);
+    const res = await fetch("/api/consultations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await res.json();
+
+    if (!res.ok || !result.success) {
+      throw new Error(result.message || "Failed to submit consultation request");
+    }
+
+    return {
+      success: true,
+      leadId: result.data?.id || `lead-${Date.now()}`,
+      message: result.message || "Consultation request successfully logged and queued for architectural review.",
+    };
+  } catch (err) {
+    console.error("[submitEdTechConsultationLead] Error:", err);
+    throw err;
   }
-
-  // Simulated asynchronous network dispatch (e.g., fetch to /api/consultation or CRM webhook)
-  await new Promise((resolve) => setTimeout(resolve, 600));
-
-  return {
-    success: true,
-    leadId: leadPayload.id,
-    message: "Consultation request successfully logged and queued for architectural review.",
-  };
 }

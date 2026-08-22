@@ -1,7 +1,5 @@
-"use client";
-
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { BrandLogo } from "./brand-logo";
 import { cn } from "@/lib/utils";
@@ -86,7 +84,7 @@ export function MobileNav() {
                   {solutionsExpanded && (
                     <div className="flex flex-col gap-2 pl-4 py-2 border-l-2 border-[#66705A]/40 ml-2">
                       <Link
-                        href="/solutions"
+                        to="/solutions"
                         onClick={closeMenu}
                         className="text-xs font-mono uppercase tracking-wider text-[#66705A] font-semibold py-1 hover:underline"
                       >
@@ -95,7 +93,7 @@ export function MobileNav() {
                       {solutionsData.map((solution) => (
                         <Link
                           key={solution.id}
-                          href={`/solutions/${solution.slug}`}
+                          to={`/solutions/${solution.slug}`}
                           onClick={closeMenu}
                           className="text-sm text-[#555850] hover:text-[#171A17] py-1"
                         >
@@ -124,7 +122,7 @@ export function MobileNav() {
                   {industriesExpanded && (
                     <div className="flex flex-col gap-2 pl-4 py-2 border-l-2 border-[#66705A]/40 ml-2">
                       <Link
-                        href="/industries"
+                        to="/industries"
                         onClick={closeMenu}
                         className="text-xs font-mono uppercase tracking-wider text-[#66705A] font-semibold py-1 hover:underline"
                       >
@@ -133,7 +131,7 @@ export function MobileNav() {
                       {industriesData.map((industry) => (
                         <Link
                           key={industry.id}
-                          href={`/industries/${industry.slug}`}
+                          to={`/industries/${industry.slug}`}
                           onClick={closeMenu}
                           className="text-sm text-[#555850] hover:text-[#171A17] py-1"
                         >
@@ -146,7 +144,7 @@ export function MobileNav() {
 
                 {/* 3. Technology */}
                 <Link
-                  href="/technology"
+                  to="/technology"
                   onClick={closeMenu}
                   className="py-2.5 text-base font-semibold text-[#171A17] hover:text-[#66705A] border-b border-[#E8E6DE]/70"
                 >
@@ -155,7 +153,7 @@ export function MobileNav() {
 
                 {/* 4. Work */}
                 <Link
-                  href="/work"
+                  to="/work"
                   onClick={closeMenu}
                   className="py-2.5 text-base font-semibold text-[#171A17] hover:text-[#66705A] border-b border-[#E8E6DE]/70"
                 >
@@ -164,7 +162,7 @@ export function MobileNav() {
 
                 {/* 5. Careers */}
                 <Link
-                  href="/careers"
+                  to="/careers"
                   onClick={closeMenu}
                   className="py-2.5 text-base font-semibold text-[#171A17] hover:text-[#66705A] border-b border-[#E8E6DE]/70"
                 >
@@ -189,21 +187,21 @@ export function MobileNav() {
                   {companyExpanded && (
                     <div className="flex flex-col gap-2 pl-4 py-2 border-l-2 border-[#66705A]/40 ml-2">
                       <Link
-                        href="/company"
+                        to="/company"
                         onClick={closeMenu}
                         className="text-sm text-[#555850] hover:text-[#171A17] py-1"
                       >
                         About Mylotic
                       </Link>
                       <Link
-                        href="/company/leadership"
+                        to="/company/leadership"
                         onClick={closeMenu}
                         className="text-sm text-[#555850] hover:text-[#171A17] py-1"
                       >
-                        Leadership & Governance
+                        Leadership &amp; Governance
                       </Link>
                       <Link
-                        href="/company/approach"
+                        to="/company/approach"
                         onClick={closeMenu}
                         className="text-sm text-[#555850] hover:text-[#171A17] py-1"
                       >
@@ -215,7 +213,7 @@ export function MobileNav() {
 
                 {/* 7. Blog */}
                 <Link
-                  href="/blog"
+                  to="/blog"
                   onClick={closeMenu}
                   className="py-2.5 text-base font-semibold text-[#171A17] hover:text-[#66705A] border-b border-[#E8E6DE]/70"
                 >
@@ -226,7 +224,7 @@ export function MobileNav() {
 
             {/* Footer inside drawer with Action Button */}
             <div className="pt-6 border-t border-[#E8E6DE] flex flex-col gap-3">
-              <Link href="/contact" onClick={closeMenu} className="w-full">
+              <Link to="/contact" onClick={closeMenu} className="w-full">
                 <button
                   type="button"
                   className="w-full py-3 px-4 rounded-md bg-[#171A17] hover:bg-[#242622] text-[#F7F5EF] font-mono text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer"

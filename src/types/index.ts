@@ -5,3 +5,4 @@ export * from "./case-studies.types";
 export * from "./careers.types";
 export * from "./navigation.types";
 export * from "./consultation.types";
+export * from "./backend.types";

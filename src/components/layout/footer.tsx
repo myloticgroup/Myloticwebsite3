@@ -1,5 +1,4 @@
-import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Container } from "@/components/ui/container";
 import { BrandLogo } from "./brand-logo";
 import { companyData } from "@/data/company";
@@ -103,7 +102,7 @@ export function Footer() {
                   {column.items.map((item) => (
                     <li key={item.title}>
                       <Link
-                        href={item.href}
+                        to={item.href}
                         className="text-xs sm:text-sm text-[#A5AC92] hover:text-[#F7F5EF] transition-colors"
                       >
                         {item.title}
@@ -127,7 +126,7 @@ export function Footer() {
             {footerNavigation.legal.map((legalItem) => (
               <Link
                 key={legalItem.title}
-                href={legalItem.href}
+                to={legalItem.href}
                 className="text-[#A5AC92] hover:text-[#F7F5EF] transition-colors"
               >
                 {legalItem.title}

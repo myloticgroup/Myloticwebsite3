@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowRight, Lock, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -86,7 +86,7 @@ export function WorkSection() {
                 </div>
                 <div className="pt-6 border-t border-[#E8E6DE] flex items-center justify-between">
                   <Link
-                    href={`/work/${study.slug}`}
+                    to={`/work/${study.slug}`}
                     className="text-xs sm:text-sm font-semibold text-[#171A17] hover:text-[#66705A] inline-flex items-center gap-1.5 transition-colors"
                   >
                     <span>Read Case Study</span>
@@ -186,14 +186,14 @@ export function WorkSection() {
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 mb-2 text-xs font-mono uppercase text-[#66705A] font-semibold">
                   <ShieldCheck className="w-4 h-4 text-[#66705A]" />
-                  <span>Client Non-Disclosure & Private Briefing Protocol</span>
+                  <span>Client Non-Disclosure &amp; Private Briefing Protocol</span>
                 </div>
                 <p className="text-sm text-[#555850] leading-relaxed">
                   Detailed architectural diagrams, benchmark numbers, and source repositories are shared during private technical consultations under bilateral disclosure agreements.
                 </p>
               </div>
 
-              <Link href="/contact" className="shrink-0 w-full sm:w-auto">
+              <Link to="/contact" className="shrink-0 w-full sm:w-auto">
                 <button
                   type="button"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#171A17] hover:bg-[#242622] text-[#F7F5EF] transition-colors font-mono text-xs uppercase tracking-wider font-semibold cursor-pointer shadow-xs"
