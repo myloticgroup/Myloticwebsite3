@@ -20,22 +20,22 @@ import { solutionsData } from "@/data/solutions";
 import { industriesData } from "@/data/industries";
 
 const solutionIcons: Record<string, React.ReactNode> = {
-  ai: <Sparkles className="w-4 h-4 text-[#66705A]" />,
-  "software-engineering": <Code2 className="w-4 h-4 text-[#66705A]" />,
-  "digital-transformation": <Cloud className="w-4 h-4 text-[#66705A]" />,
-  staffing: <Users2 className="w-4 h-4 text-[#66705A]" />,
-  "managed-services": <ShieldCheck className="w-4 h-4 text-[#66705A]" />,
-  "edtech-training": <GraduationCap className="w-4 h-4 text-[#66705A]" />,
+  ai: <Sparkles className="w-4 h-4 text-[#4688B2]" />,
+  "software-engineering": <Code2 className="w-4 h-4 text-[#4688B2]" />,
+  "digital-transformation": <Cloud className="w-4 h-4 text-[#4688B2]" />,
+  staffing: <Users2 className="w-4 h-4 text-[#4688B2]" />,
+  "managed-services": <ShieldCheck className="w-4 h-4 text-[#4688B2]" />,
+  "edtech-training": <GraduationCap className="w-4 h-4 text-[#4688B2]" />,
 };
 
 const industryIcons: Record<string, React.ReactNode> = {
-  "ai-intelligent-technology": <Sparkles className="w-4 h-4 text-[#66705A]" />,
-  "it-digital-technology": <Code2 className="w-4 h-4 text-[#66705A]" />,
-  "global-capability-centers": <Globe className="w-4 h-4 text-[#66705A]" />,
-  fintech: <Landmark className="w-4 h-4 text-[#66705A]" />,
-  edtech: <BookOpen className="w-4 h-4 text-[#66705A]" />,
-  "media-advertising": <Tv className="w-4 h-4 text-[#66705A]" />,
-  "enterprise-tech": <Cpu className="w-4 h-4 text-[#66705A]" />,
+  "ai-intelligent-technology": <Sparkles className="w-4 h-4 text-[#4688B2]" />,
+  "it-digital-technology": <Code2 className="w-4 h-4 text-[#4688B2]" />,
+  "global-capability-centers": <Globe className="w-4 h-4 text-[#4688B2]" />,
+  fintech: <Landmark className="w-4 h-4 text-[#4688B2]" />,
+  edtech: <BookOpen className="w-4 h-4 text-[#4688B2]" />,
+  "media-advertising": <Tv className="w-4 h-4 text-[#4688B2]" />,
+  "enterprise-tech": <Cpu className="w-4 h-4 text-[#4688B2]" />,
 };
 
 export function DesktopNav() {
@@ -89,18 +89,18 @@ export function DesktopNav() {
           aria-expanded={activeDropdown === "solutions"}
           aria-haspopup="true"
           className={cn(
-            "inline-flex items-center gap-1.5 px-3 py-2 rounded-md transition-all duration-200 cursor-pointer",
-            "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66705A]",
+            "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl transition-all duration-200 cursor-pointer",
+            "text-[#243B53] hover:text-[#10213B] hover:bg-[#D8ECF7]/70",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4688B2]",
             (activeDropdown === "solutions" || pathname?.startsWith("/solutions")) &&
-              "text-[#171A17] bg-[#E8E6DE] font-semibold"
+              "text-[#10213B] bg-[#D8ECF7] font-semibold shadow-2xs"
           )}
         >
           <span>Solutions</span>
           <ChevronDown
             className={cn(
-              "w-3.5 h-3.5 transition-transform duration-200 text-[#555850]",
-              activeDropdown === "solutions" && "rotate-180 text-[#171A17]"
+              "w-3.5 h-3.5 transition-transform duration-200 text-[#5C7690]",
+              activeDropdown === "solutions" && "rotate-180 text-[#10213B]"
             )}
           />
         </button>
@@ -111,26 +111,26 @@ export function DesktopNav() {
             role="region"
             aria-label="Solutions Menu"
           >
-            <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E6DE] p-6 shadow-dropdown grid grid-cols-12 gap-6">
+            <div className="bg-[#FFFFFF]/95 backdrop-blur-2xl rounded-2xl border border-white/80 p-6 shadow-dropdown grid grid-cols-12 gap-6">
               {/* Editorial Spotlight */}
-              <div className="col-span-4 bg-[#F7F5EF] rounded-xl p-5 border border-[#E8E6DE] flex flex-col justify-between">
+              <div className="col-span-4 bg-[#F0F7FB] rounded-xl p-5 border border-[#D0E3F0] flex flex-col justify-between">
                 <div>
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider text-[#66705A] font-semibold bg-[#E8E6DE] mb-3">
-                    <Sparkles className="w-3 h-3 text-[#66705A]" /> Practice Area
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider text-[#4688B2] font-semibold bg-white border border-[#D0E3F0] mb-3 shadow-2xs">
+                    <Sparkles className="w-3 h-3 text-[#4688B2]" /> Practice Area
                   </span>
-                  <h3 className="text-sm font-bold text-[#171A17] mb-2 leading-snug">
+                  <h3 className="text-sm font-bold text-[#10213B] mb-2 leading-snug">
                     AI &amp; Intelligent Systems
                   </h3>
-                  <p className="text-xs text-[#555850] leading-relaxed font-normal">
+                  <p className="text-xs text-[#243B53] leading-relaxed font-normal">
                     Deploying production-grade machine learning models, vector search, and automated workflows.
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#E8E6DE] mt-4 flex flex-col gap-2">
+                <div className="pt-4 border-t border-[#D0E3F0] mt-4 flex flex-col gap-2">
                   <Link
                     to="/solutions/ai"
                     onClick={closeDropdown}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#66705A] hover:text-[#4C5642] transition-colors group"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#4688B2] hover:text-[#10213B] transition-colors group"
                   >
                     <span>Explore AI Practice</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -138,7 +138,7 @@ export function DesktopNav() {
                   <Link
                     to="/solutions"
                     onClick={closeDropdown}
-                    className="text-xs text-[#73766D] hover:text-[#242622] transition-colors"
+                    className="text-xs text-[#5C7690] hover:text-[#10213B] transition-colors"
                   >
                     View all 6 practice areas →
                   </Link>
@@ -152,18 +152,18 @@ export function DesktopNav() {
                     key={solution.id}
                     to={`/solutions/${solution.slug}`}
                     onClick={closeDropdown}
-                    className="group p-3 rounded-xl hover:bg-[#F7F5EF] border border-transparent hover:border-[#E8E6DE] transition-all duration-200 flex items-start gap-3"
+                    className="group p-3 rounded-xl hover:bg-[#F0F7FB] border border-transparent hover:border-[#D0E3F0] transition-all duration-200 flex items-start gap-3"
                   >
-                    <div className="p-2 rounded-lg bg-[#F1F0EA] border border-[#E8E6DE] text-[#66705A] shrink-0 mt-0.5 group-hover:bg-[#E8E6DE] group-hover:scale-105 transition-all duration-200 shadow-2xs">
+                    <div className="p-2 rounded-lg bg-[#E8F5FA] border border-[#D0E3F0] text-[#4688B2] shrink-0 mt-0.5 group-hover:bg-white group-hover:scale-105 transition-all duration-200 shadow-2xs">
                       {solutionIcons[solution.slug] || (
                         <Code2 className="w-4 h-4" />
                       )}
                     </div>
                     <div>
-                      <span className="text-sm font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors block">
+                      <span className="text-sm font-semibold text-[#10213B] group-hover:text-[#4688B2] transition-colors block">
                         {solution.title.split("&")[0].trim()}
                       </span>
-                      <span className="text-xs text-[#555850] line-clamp-1 mt-0.5 font-normal">
+                      <span className="text-xs text-[#243B53] line-clamp-1 mt-0.5 font-normal">
                         {solution.shortDescription}
                       </span>
                     </div>
@@ -189,18 +189,18 @@ export function DesktopNav() {
           aria-expanded={activeDropdown === "industries"}
           aria-haspopup="true"
           className={cn(
-            "inline-flex items-center gap-1.5 px-3 py-2 rounded-md transition-all duration-200 cursor-pointer",
-            "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66705A]",
+            "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl transition-all duration-200 cursor-pointer",
+            "text-[#243B53] hover:text-[#10213B] hover:bg-[#D8ECF7]/70",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4688B2]",
             (activeDropdown === "industries" || pathname?.startsWith("/industries")) &&
-              "text-[#171A17] bg-[#E8E6DE] font-semibold"
+              "text-[#10213B] bg-[#D8ECF7] font-semibold shadow-2xs"
           )}
         >
           <span>Industries</span>
           <ChevronDown
             className={cn(
-              "w-3.5 h-3.5 transition-transform duration-200 text-[#555850]",
-              activeDropdown === "industries" && "rotate-180 text-[#171A17]"
+              "w-3.5 h-3.5 transition-transform duration-200 text-[#5C7690]",
+              activeDropdown === "industries" && "rotate-180 text-[#10213B]"
             )}
           />
         </button>
@@ -211,35 +211,35 @@ export function DesktopNav() {
             role="region"
             aria-label="Industries Menu"
           >
-            <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E6DE] p-3 shadow-dropdown flex flex-col gap-1">
+            <div className="bg-[#FFFFFF]/95 backdrop-blur-2xl rounded-2xl border border-white/80 p-3 shadow-dropdown flex flex-col gap-1">
               {industriesData.map((industry) => (
                 <Link
                   key={industry.id}
                   to={`/industries/${industry.slug}`}
                   onClick={closeDropdown}
-                  className="group p-3 rounded-xl hover:bg-[#F7F5EF] border border-transparent hover:border-[#E8E6DE] transition-all duration-200 flex items-start gap-3"
+                  className="group p-3 rounded-xl hover:bg-[#F0F7FB] border border-transparent hover:border-[#D0E3F0] transition-all duration-200 flex items-start gap-3"
                 >
-                  <div className="p-2 rounded-lg bg-[#F1F0EA] border border-[#E8E6DE] text-[#66705A] shrink-0 mt-0.5 group-hover:bg-[#E8E6DE] group-hover:scale-105 transition-all duration-200 shadow-2xs">
+                  <div className="p-2 rounded-lg bg-[#E8F5FA] border border-[#D0E3F0] text-[#4688B2] shrink-0 mt-0.5 group-hover:bg-white group-hover:scale-105 transition-all duration-200 shadow-2xs">
                     {industryIcons[industry.slug] || (
                       <Landmark className="w-4 h-4" />
                     )}
                   </div>
                   <div>
-                    <span className="text-sm font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors block">
+                    <span className="text-sm font-semibold text-[#10213B] group-hover:text-[#4688B2] transition-colors block">
                       {industry.name}
                     </span>
-                    <span className="text-xs text-[#555850] line-clamp-1 mt-0.5 font-normal">
+                    <span className="text-xs text-[#243B53] line-clamp-1 mt-0.5 font-normal">
                       {industry.headline}
                     </span>
                   </div>
                 </Link>
               ))}
 
-              <div className="pt-2 mt-1 border-t border-[#E8E6DE] px-3">
+              <div className="pt-2 mt-1 border-t border-[#D0E3F0] px-3">
                 <Link
                   to="/industries"
                   onClick={closeDropdown}
-                  className="text-xs font-semibold text-[#66705A] hover:underline"
+                  className="text-xs font-semibold text-[#4688B2] hover:underline"
                 >
                   View all industry domain practices →
                 </Link>
@@ -253,10 +253,10 @@ export function DesktopNav() {
       <Link
         to="/technology"
         className={cn(
-          "px-3 py-2 rounded-md transition-all duration-200",
-          "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66705A]",
-          pathname === "/technology" && "text-[#171A17] bg-[#E8E6DE] font-semibold"
+          "px-3.5 py-2 rounded-xl transition-all duration-200",
+          "text-[#243B53] hover:text-[#10213B] hover:bg-[#D8ECF7]/70",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4688B2]",
+          pathname === "/technology" && "text-[#10213B] bg-[#D8ECF7] font-semibold shadow-2xs"
         )}
       >
         Technology
@@ -266,10 +266,10 @@ export function DesktopNav() {
       <Link
         to="/work"
         className={cn(
-          "px-3 py-2 rounded-md transition-all duration-200",
-          "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66705A]",
-          pathname === "/work" && "text-[#171A17] bg-[#E8E6DE] font-semibold"
+          "px-3.5 py-2 rounded-xl transition-all duration-200",
+          "text-[#243B53] hover:text-[#10213B] hover:bg-[#D8ECF7]/70",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4688B2]",
+          pathname === "/work" && "text-[#10213B] bg-[#D8ECF7] font-semibold shadow-2xs"
         )}
       >
         Work
@@ -279,10 +279,10 @@ export function DesktopNav() {
       <Link
         to="/careers"
         className={cn(
-          "px-3 py-2 rounded-md transition-all duration-200",
-          "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66705A]",
-          pathname?.startsWith("/careers") && "text-[#171A17] bg-[#E8E6DE] font-semibold"
+          "px-3.5 py-2 rounded-xl transition-all duration-200",
+          "text-[#243B53] hover:text-[#10213B] hover:bg-[#D8ECF7]/70",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4688B2]",
+          pathname?.startsWith("/careers") && "text-[#10213B] bg-[#D8ECF7] font-semibold shadow-2xs"
         )}
       >
         Careers
@@ -302,18 +302,18 @@ export function DesktopNav() {
           aria-expanded={activeDropdown === "company"}
           aria-haspopup="true"
           className={cn(
-            "inline-flex items-center gap-1.5 px-3 py-2 rounded-md transition-all duration-200 cursor-pointer",
-            "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66705A]",
+            "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl transition-all duration-200 cursor-pointer",
+            "text-[#243B53] hover:text-[#10213B] hover:bg-[#D8ECF7]/70",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4688B2]",
             (activeDropdown === "company" || pathname?.startsWith("/company")) &&
-              "text-[#171A17] bg-[#E8E6DE] font-semibold"
+              "text-[#10213B] bg-[#D8ECF7] font-semibold shadow-2xs"
           )}
         >
           <span>Company</span>
           <ChevronDown
             className={cn(
-              "w-3.5 h-3.5 transition-transform duration-200 text-[#555850]",
-              activeDropdown === "company" && "rotate-180 text-[#171A17]"
+              "w-3.5 h-3.5 transition-transform duration-200 text-[#5C7690]",
+              activeDropdown === "company" && "rotate-180 text-[#10213B]"
             )}
           />
         </button>
@@ -324,16 +324,16 @@ export function DesktopNav() {
             role="region"
             aria-label="Company Menu"
           >
-            <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E6DE] p-3 shadow-dropdown flex flex-col gap-1">
+            <div className="bg-[#FFFFFF]/95 backdrop-blur-2xl rounded-2xl border border-white/80 p-3 shadow-dropdown flex flex-col gap-1">
               <Link
                 to="/company"
                 onClick={closeDropdown}
-                className="group p-3 rounded-xl hover:bg-[#F7F5EF] transition-all duration-200 flex flex-col"
+                className="group p-3 rounded-xl hover:bg-[#F0F7FB] transition-all duration-200 flex flex-col"
               >
-                <span className="text-sm font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors">
+                <span className="text-sm font-semibold text-[#10213B] group-hover:text-[#4688B2] transition-colors">
                   About Mylotic
                 </span>
-                <span className="text-xs text-[#555850] mt-0.5 font-normal">
+                <span className="text-xs text-[#243B53] mt-0.5 font-normal">
                   Our corporate mission, engineering philosophy, and values.
                 </span>
               </Link>
@@ -341,12 +341,12 @@ export function DesktopNav() {
               <Link
                 to="/company/leadership"
                 onClick={closeDropdown}
-                className="group p-3 rounded-xl hover:bg-[#F7F5EF] transition-all duration-200 flex flex-col"
+                className="group p-3 rounded-xl hover:bg-[#F0F7FB] transition-all duration-200 flex flex-col"
               >
-                <span className="text-sm font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors">
+                <span className="text-sm font-semibold text-[#10213B] group-hover:text-[#4688B2] transition-colors">
                   Leadership &amp; Governance
                 </span>
-                <span className="text-xs text-[#555850] mt-0.5 font-normal">
+                <span className="text-xs text-[#243B53] mt-0.5 font-normal">
                   Executive leadership and corporate governance.
                 </span>
               </Link>
@@ -354,12 +354,12 @@ export function DesktopNav() {
               <Link
                 to="/company/approach"
                 onClick={closeDropdown}
-                className="group p-3 rounded-xl hover:bg-[#F7F5EF] transition-all duration-200 flex flex-col"
+                className="group p-3 rounded-xl hover:bg-[#F0F7FB] transition-all duration-200 flex flex-col"
               >
-                <span className="text-sm font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors">
+                <span className="text-sm font-semibold text-[#10213B] group-hover:text-[#4688B2] transition-colors">
                   Our Delivery Approach
                 </span>
-                <span className="text-xs text-[#555850] mt-0.5 font-normal">
+                <span className="text-xs text-[#243B53] mt-0.5 font-normal">
                   How we architect, engineer, and deliver technology.
                 </span>
               </Link>
@@ -372,10 +372,10 @@ export function DesktopNav() {
       <Link
         to="/blog"
         className={cn(
-          "px-3 py-2 rounded-md transition-all duration-200",
-          "text-[#242622] hover:text-[#171A17] hover:bg-[#E8E6DE]/60",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#66705A]",
-          (pathname === "/blog" || pathname?.startsWith("/blog/")) && "text-[#171A17] bg-[#E8E6DE] font-semibold"
+          "px-3.5 py-2 rounded-xl transition-all duration-200",
+          "text-[#243B53] hover:text-[#10213B] hover:bg-[#D8ECF7]/70",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4688B2]",
+          (pathname === "/blog" || pathname?.startsWith("/blog/")) && "text-[#10213B] bg-[#D8ECF7] font-semibold shadow-2xs"
         )}
       >
         Blog

@@ -25,14 +25,19 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled
-          ? "bg-[#F7F5EF]/95 backdrop-blur-md border-b border-[#E8E6DE] shadow-xs py-3.5"
-          : "bg-[#F7F5EF] border-b border-[#E8E6DE]/60 py-4"
+        "sticky top-0 z-50 w-full transition-all duration-300 pointer-events-none",
+        isScrolled ? "pt-2 pb-1" : "pt-4 sm:pt-5 pb-2"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-8">
+      <div className="w-[min(86vw,1290px)] mx-auto px-2 sm:px-0 pointer-events-auto">
+        <div
+          className={cn(
+            "rounded-[22px] transition-all duration-300 border flex items-center justify-between gap-4 lg:gap-8 px-4 sm:px-6 min-h-[64px] sm:min-h-[68px]",
+            isScrolled
+              ? "bg-[#F5FBFF]/90 backdrop-blur-2xl border-white/80 shadow-[0_16px_40px_rgba(70,110,135,0.16)] py-2.5"
+              : "bg-[#F5FBFF]/75 backdrop-blur-xl border-white/75 shadow-[0_12px_40px_rgba(70,110,135,0.12)] py-3 sm:py-3.5"
+          )}
+        >
           {/* Brand Logo */}
           <div className="flex items-center shrink-0">
             <BrandLogo variant="light" />
@@ -46,10 +51,10 @@ export function Header() {
             <Link to="/contact" className="hidden sm:inline-flex group">
               <button
                 type="button"
-                className="px-5 py-2.5 rounded-lg bg-[#171A17] hover:bg-[#242622] active:scale-[0.98] text-[#F7F5EF] font-mono text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all duration-200 shadow-xs cursor-pointer"
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#9DD1EC] to-[#79B9DA] hover:from-[#A9DCF4] hover:to-[#85C4E5] active:scale-[0.98] text-[#10213B] font-mono text-xs uppercase tracking-wider font-bold flex items-center gap-2 transition-all duration-200 shadow-cta-blue hover:shadow-cta-blue-hover cursor-pointer border border-white/70"
               >
                 <span>START A CONVERSATION</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#A5AC92] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#10213B] group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
 

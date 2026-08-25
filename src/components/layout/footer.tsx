@@ -59,7 +59,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#171A17] border-t border-[#333830] text-[#A5AC92] mt-auto relative overflow-hidden">
+    <footer className="w-full bg-[#060D18] border-t border-white/10 text-[#A2BACB] mt-auto relative overflow-hidden">
+      {/* Background Subtle Grid & Ambient Glow */}
+      <div className="absolute inset-0 bg-tech-grid-fine opacity-15 pointer-events-none" />
+      <div className="ambient-glow-blue w-96 h-96 -top-20 right-0 opacity-20" />
+
       <Container size="default" className="relative z-10">
         {/* Main Footer Grid */}
         <div className="py-16 sm:py-20 lg:py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14">
@@ -67,23 +71,32 @@ export function Footer() {
           <div className="lg:col-span-5 flex flex-col gap-6">
             <BrandLogo variant="dark" />
 
-            <p className="text-sm text-[#E8E6DE] leading-relaxed max-w-sm">
+            <p className="text-sm text-[#D8ECF7] leading-relaxed max-w-sm font-normal">
               {companyData.summary}
             </p>
 
+            {/* Live Infrastructure Telemetry Status Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-[#8CC8E8] w-fit shadow-2xs">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8CC8E8] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8CC8E8]" />
+              </span>
+              <span>SYSTEMS: 100% OPERATIONAL // 99.99% UPTIME</span>
+            </div>
+
             {/* Verified Public Location & Contact */}
-            <div className="flex flex-col gap-2.5 pt-2 text-xs font-mono text-[#A5AC92]">
+            <div className="flex flex-col gap-2.5 pt-2 text-xs font-mono text-[#A2BACB]">
               <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#C5A880] shrink-0 mt-0.5" />
-                <span className="text-[#E8E6DE] leading-tight">
+                <MapPin className="w-3.5 h-3.5 text-[#8CC8E8] shrink-0 mt-0.5" />
+                <span className="text-white leading-tight">
                   Gurugram, Haryana, India
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-[#8CC8E8] shrink-0" />
                 <a
                   href={`mailto:${companyData.email}`}
-                  className="text-[#E8E6DE] hover:text-white transition-colors"
+                  className="text-white hover:text-[#8CC8E8] transition-colors"
                 >
                   {companyData.email}
                 </a>
@@ -95,7 +108,7 @@ export function Footer() {
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             {footerNavigation.columns.map((column) => (
               <div key={column.title} className="flex flex-col gap-4">
-                <h4 className="font-mono text-xs uppercase tracking-wider text-[#F7F5EF] font-semibold">
+                <h4 className="font-mono text-xs uppercase tracking-wider text-white font-semibold">
                   {column.title}
                 </h4>
                 <ul className="flex flex-col gap-2.5">
@@ -103,7 +116,7 @@ export function Footer() {
                     <li key={item.title}>
                       <Link
                         to={item.href}
-                        className="text-xs sm:text-sm text-[#A5AC92] hover:text-[#F7F5EF] transition-colors"
+                        className="text-xs sm:text-sm text-[#A2BACB] hover:text-white transition-colors"
                       >
                         {item.title}
                       </Link>
@@ -116,7 +129,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright, Legal & Verified Social Channels */}
-        <div className="py-8 border-t border-[#333830] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#73766D]">
+        <div className="py-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#748D9E]">
           <p>
             © {currentYear} {companyData.legalName}. All rights reserved.
           </p>
@@ -127,7 +140,7 @@ export function Footer() {
               <Link
                 key={legalItem.title}
                 to={legalItem.href}
-                className="text-[#A5AC92] hover:text-[#F7F5EF] transition-colors"
+                className="text-[#A2BACB] hover:text-white transition-colors"
               >
                 {legalItem.title}
               </Link>
@@ -150,7 +163,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="p-2 rounded-lg text-[#A5AC92] hover:text-[#F7F5EF] hover:bg-[#242622] transition-colors"
+                  className="p-2 rounded-lg text-[#A2BACB] hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <Icon className="w-4 h-4" />
                 </a>

@@ -1,5 +1,6 @@
 export * from "./hero-section";
 export * from "./hero-architecture";
+export * from "./hero-systems-visual";
 export * from "./positioning-section";
 export * from "./capabilities-section";
 export * from "./engineering-section";

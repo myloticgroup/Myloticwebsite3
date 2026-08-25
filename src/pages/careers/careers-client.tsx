@@ -72,17 +72,17 @@ export function CareersClient({ jobs }: CareersClientProps) {
   return (
     <div>
       {/* 01 Interactive Search & Filter Controls */}
-      <div className="p-6 rounded-2xl bg-white border border-[#E8E6DE] shadow-card mb-8">
+      <div className="p-6 sm:p-8 rounded-3xl bg-white border border-white/80 shadow-card mb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Keyword Search */}
           <div className="md:col-span-6 relative">
-            <Search className="w-4 h-4 text-[#73766D] absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-[#5C7690] absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search by role title, framework, skill (e.g. PyTorch, Kubernetes)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#E8E6DE] bg-[#F7F5EF] text-sm text-[#171A17] placeholder:text-[#73766D] focus:outline-none focus:border-[#66705A] transition-colors"
+              className="w-full pl-11 pr-4 py-3 rounded-xl border border-[#D0E3F0] bg-[#F0F7FB] text-sm text-[#10213B] placeholder:text-[#5C7690] focus:outline-none focus:border-[#4688B2] focus:bg-white transition-colors"
             />
           </div>
 
@@ -91,7 +91,7 @@ export function CareersClient({ jobs }: CareersClientProps) {
             <select
               value={selectedDept}
               onChange={(e) => setSelectedDept(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-lg border border-[#E8E6DE] bg-[#F7F5EF] text-sm text-[#171A17] focus:outline-none focus:border-[#66705A] transition-colors font-mono"
+              className="w-full px-4 py-3 rounded-xl border border-[#D0E3F0] bg-[#F0F7FB] text-sm text-[#10213B] focus:outline-none focus:border-[#4688B2] focus:bg-white transition-colors font-mono"
             >
               {departments.map((dept) => (
                 <option key={dept} value={dept}>
@@ -106,7 +106,7 @@ export function CareersClient({ jobs }: CareersClientProps) {
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-lg border border-[#E8E6DE] bg-[#F7F5EF] text-sm text-[#171A17] focus:outline-none focus:border-[#66705A] transition-colors font-mono"
+              className="w-full px-4 py-3 rounded-xl border border-[#D0E3F0] bg-[#F0F7FB] text-sm text-[#10213B] focus:outline-none focus:border-[#4688B2] focus:bg-white transition-colors font-mono"
             >
               {workplaceTypes.map((type) => (
                 <option key={type} value={type}>
@@ -118,7 +118,7 @@ export function CareersClient({ jobs }: CareersClientProps) {
         </div>
 
         {/* Results Counter */}
-        <div className="mt-4 pt-4 border-t border-[#E8E6DE] flex items-center justify-between text-xs font-mono text-[#73766D]">
+        <div className="mt-4 pt-4 border-t border-[#D0E3F0]/70 flex items-center justify-between text-xs font-mono text-[#5C7690]">
           <span>Showing {filteredJobs.length} active position{filteredJobs.length === 1 ? "" : "s"}</span>
           {(searchQuery || selectedDept !== "All" || selectedType !== "All") && (
             <button
@@ -127,7 +127,7 @@ export function CareersClient({ jobs }: CareersClientProps) {
                 setSelectedDept("All");
                 setSelectedType("All");
               }}
-              className="text-[#66705A] hover:underline cursor-pointer"
+              className="text-[#4688B2] hover:underline cursor-pointer"
             >
               Reset Filters
             </button>
@@ -141,32 +141,32 @@ export function CareersClient({ jobs }: CareersClientProps) {
           {filteredJobs.map((job) => (
             <div
               key={job.id}
-              className="p-8 rounded-2xl bg-white border border-[#E8E6DE] shadow-card flex flex-col justify-between hover:border-[#66705A]/50 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group"
+              className="p-8 sm:p-10 rounded-3xl bg-white border border-white/80 shadow-card flex flex-col justify-between hover:border-[#4688B2]/50 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group"
             >
               <div>
-                <div className="flex items-center justify-between pb-4 border-b border-[#E8E6DE]/70 mb-4">
-                  <span className="font-mono text-xs font-bold text-[#66705A] uppercase">
+                <div className="flex items-center justify-between pb-4 border-b border-[#D0E3F0]/70 mb-4">
+                  <span className="font-mono text-xs font-bold text-[#4688B2] uppercase">
                     {job.department}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded bg-[#F7F5EF] border border-[#E8E6DE] text-[#4C5642] text-xs font-medium uppercase font-mono">
+                  <span className="px-3 py-1 rounded-full bg-[#F0F7FB] border border-[#D0E3F0] text-[#182A43] text-xs font-medium uppercase font-mono">
                     {job.workplaceType}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-[#171A17] mb-2 group-hover:text-[#4C5642] transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#10213B] mb-2 group-hover:text-[#182A43] transition-colors">
                   {job.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#555850] leading-relaxed line-clamp-2 mb-6 font-normal">
+                <p className="text-xs sm:text-sm text-[#243B53] leading-relaxed line-clamp-2 mb-6 font-normal">
                   {job.summary}
                 </p>
 
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-[#73766D] mb-6">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-[#5C7690] mb-6">
                   <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#66705A]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#4688B2]" />
                     <span>{job.location}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Briefcase className="w-3.5 h-3.5 text-[#66705A]" />
+                    <Briefcase className="w-3.5 h-3.5 text-[#4688B2]" />
                     <span>{job.experienceLevel} • {job.employmentType}</span>
                   </div>
                 </div>
@@ -176,34 +176,34 @@ export function CareersClient({ jobs }: CareersClientProps) {
                   {job.skills.slice(0, 4).map((skill) => (
                     <span
                       key={skill}
-                      className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#F7F5EF] text-[#242622] border border-[#E8E6DE]"
+                      className="px-3 py-1 rounded-full text-[11px] font-mono bg-[#F0F7FB] text-[#182A43] border border-[#D0E3F0]"
                     >
                       {skill}
                     </span>
                   ))}
                   {job.skills.length > 4 && (
-                    <span className="px-2 py-0.5 rounded text-[11px] font-mono text-[#73766D]">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-mono text-[#5C7690]">
                       +{job.skills.length - 4} more
                     </span>
                   )}
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-[#E8E6DE]/70 flex items-center justify-between">
+              <div className="mt-8 pt-4 border-t border-[#D0E3F0]/70 flex items-center justify-between">
                 <Link
                   to={`/careers/${job.slug}`}
-                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-semibold text-[#171A17] group-hover:text-[#66705A] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-semibold text-[#10213B] group-hover:text-[#4688B2] transition-colors cursor-pointer"
                 >
                   <span>View Role Specifications</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#4688B2]" />
                 </Link>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="p-12 rounded-2xl bg-white border border-[#E8E6DE] text-center mb-20">
-          <p className="text-base text-[#555850] font-normal mb-3">
+        <div className="p-12 rounded-3xl bg-white border border-white/80 text-center mb-20">
+          <p className="text-base text-[#243B53] font-normal mb-3">
             No positions currently match your filter criteria.
           </p>
           <button
@@ -212,7 +212,7 @@ export function CareersClient({ jobs }: CareersClientProps) {
               setSelectedDept("All");
               setSelectedType("All");
             }}
-            className="text-xs font-mono uppercase font-semibold text-[#66705A] hover:underline cursor-pointer"
+            className="text-xs font-mono uppercase font-semibold text-[#4688B2] hover:underline cursor-pointer"
           >
             Clear all search filters
           </button>
@@ -220,26 +220,26 @@ export function CareersClient({ jobs }: CareersClientProps) {
       )}
 
       {/* 03 Talent Community Intake Card */}
-      <div className="p-8 sm:p-12 rounded-3xl bg-[#171A17] text-[#F7F5EF] border border-[#333830] shadow-card">
+      <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#10213B] via-[#0D1C33] to-[#081220] text-white border border-white/10 shadow-card">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#242622] text-[#A5AC92] text-xs font-mono uppercase tracking-widest font-semibold mb-4">
-            <UserPlus className="w-3.5 h-3.5 text-[#C5A880]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#8CC8E8] text-xs font-mono uppercase tracking-widest font-semibold mb-4 border border-white/15">
+            <UserPlus className="w-3.5 h-3.5 text-[#8CC8E8]" />
             <span>GENERAL TALENT INTAKE</span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-bold text-[#F7F5EF] mb-3">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
             Don&apos;t see an exact match? Join our Talent Network.
           </h3>
-          <p className="text-sm text-[#A5AC92] leading-relaxed mb-8">
+          <p className="text-sm text-[#A2BACB] leading-relaxed mb-8">
             We continuously form dedicated engineering pods for new enterprise AI and cloud engagements. Submit your profile for immediate consideration when relevant opportunities emerge.
           </p>
 
           {talentStatus === "success" ? (
-            <div className="p-6 rounded-2xl bg-[#242622] border border-[#4C5642] flex items-center gap-4 text-[#A5AC92]">
-              <CheckCircle2 className="w-6 h-6 text-[#A5AC92] shrink-0" />
+            <div className="p-6 rounded-2xl bg-white/10 border border-white/15 flex items-center gap-4 text-[#8CC8E8]">
+              <CheckCircle2 className="w-6 h-6 text-[#8CC8E8] shrink-0" />
               <div>
                 <h4 className="font-bold text-white text-base">Profile Received &amp; Indexed</h4>
-                <p className="text-xs text-[#A5AC92] mt-0.5">
+                <p className="text-xs text-[#D8ECF7] mt-0.5">
                   Our recruitment and engineering leads will reach out when tailored roles align with your capabilities.
                 </p>
               </div>
@@ -259,7 +259,7 @@ export function CareersClient({ jobs }: CareersClientProps) {
                   placeholder="Full Legal Name *"
                   value={talentData.fullName}
                   onChange={(e) => setTalentData({ ...talentData, fullName: e.target.value })}
-                  className="px-4 py-3 rounded-lg bg-[#242622] border border-[#333830] text-sm text-[#F7F5EF] placeholder:text-[#73766D] focus:outline-none focus:border-[#A5AC92] transition-colors"
+                  className="px-4 py-3.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white placeholder:text-[#748D9E] focus:outline-none focus:border-[#8CC8E8] transition-colors"
                 />
                 <input
                   type="email"
@@ -267,7 +267,7 @@ export function CareersClient({ jobs }: CareersClientProps) {
                   placeholder="Personal / Contact Email *"
                   value={talentData.email}
                   onChange={(e) => setTalentData({ ...talentData, email: e.target.value })}
-                  className="px-4 py-3 rounded-lg bg-[#242622] border border-[#333830] text-sm text-[#F7F5EF] placeholder:text-[#73766D] focus:outline-none focus:border-[#A5AC92] transition-colors"
+                  className="px-4 py-3.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white placeholder:text-[#748D9E] focus:outline-none focus:border-[#8CC8E8] transition-colors"
                 />
               </div>
 
@@ -278,14 +278,14 @@ export function CareersClient({ jobs }: CareersClientProps) {
                   placeholder="Key Technical Skills (e.g. Go, PyTorch, Kubernetes) *"
                   value={talentData.skills}
                   onChange={(e) => setTalentData({ ...talentData, skills: e.target.value })}
-                  className="px-4 py-3 rounded-lg bg-[#242622] border border-[#333830] text-sm text-[#F7F5EF] placeholder:text-[#73766D] focus:outline-none focus:border-[#A5AC92] transition-colors"
+                  className="px-4 py-3.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white placeholder:text-[#748D9E] focus:outline-none focus:border-[#8CC8E8] transition-colors"
                 />
                 <input
                   type="url"
                   placeholder="LinkedIn or GitHub Profile URL"
                   value={talentData.linkedIn}
                   onChange={(e) => setTalentData({ ...talentData, linkedIn: e.target.value })}
-                  className="px-4 py-3 rounded-lg bg-[#242622] border border-[#333830] text-sm text-[#F7F5EF] placeholder:text-[#73766D] focus:outline-none focus:border-[#A5AC92] transition-colors"
+                  className="px-4 py-3.5 rounded-xl bg-white/5 border border-white/15 text-sm text-white placeholder:text-[#748D9E] focus:outline-none focus:border-[#8CC8E8] transition-colors"
                 />
               </div>
 
@@ -293,10 +293,10 @@ export function CareersClient({ jobs }: CareersClientProps) {
                 <button
                   type="submit"
                   disabled={talentStatus === "submitting"}
-                  className="px-6 py-3.5 rounded-lg bg-[#F7F5EF] hover:bg-white text-[#171A17] font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
+                  className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#9DD1EC] to-[#79B9DA] hover:from-[#A9DCF4] hover:to-[#85C4E5] text-[#10213B] font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center gap-2 cursor-pointer shadow-cta-blue hover:shadow-cta-blue-hover disabled:opacity-50 border border-white/60"
                 >
                   <span>{talentStatus === "submitting" ? "Transmitting..." : "Submit to Talent Pool"}</span>
-                  <ArrowRight className="w-4 h-4 text-[#66705A]" />
+                  <ArrowRight className="w-4 h-4 text-[#10213B]" />
                 </button>
               </div>
             </form>

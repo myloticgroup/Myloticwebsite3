@@ -55,31 +55,31 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#E8E6DE] shadow-card text-center">
-        <div className="w-14 h-14 rounded-full bg-[#F7F5EF] text-[#66705A] border border-[#E8E6DE] flex items-center justify-center mb-6 mx-auto">
+      <div className="p-8 sm:p-10 rounded-3xl bg-white border border-white/80 shadow-card text-center">
+        <div className="w-14 h-14 rounded-full bg-[#F0F7FB] text-[#4688B2] border border-[#D0E3F0] flex items-center justify-center mb-6 mx-auto">
           <CheckCircle2 className="w-7 h-7" />
         </div>
 
-        <span className="font-mono text-xs uppercase tracking-widest text-[#66705A] font-semibold block mb-2">
+        <span className="font-mono text-xs uppercase tracking-widest text-[#4688B2] font-semibold block mb-2">
           INQUIRY TRANSMITTED
         </span>
 
-        <h3 className="text-2xl font-bold text-[#171A17] mb-3">
+        <h3 className="text-2xl font-bold text-[#10213B] mb-3">
           Thank you for reaching out.
         </h3>
 
-        <p className="text-sm text-[#555850] max-w-md mx-auto leading-relaxed mb-6 font-normal">
+        <p className="text-sm text-[#243B53] max-w-md mx-auto leading-relaxed mb-6 font-normal">
           Your architectural inquiry has been routed to our technical leadership team. We will review your project parameters and respond within 1 business day.
         </p>
 
-        <div className="p-4 rounded-xl bg-[#F7F5EF] border border-[#E8E6DE] max-w-sm mx-auto text-xs font-mono text-[#555850] mb-6 space-y-1 text-left">
+        <div className="p-4 rounded-2xl bg-[#F0F7FB] border border-[#D0E3F0] max-w-sm mx-auto text-xs font-mono text-[#243B53] mb-6 space-y-1 text-left">
           <div className="flex justify-between">
             <span>Primary Contact:</span>
-            <span className="text-[#171A17] font-semibold">{formData.fullName}</span>
+            <span className="text-[#10213B] font-semibold">{formData.fullName}</span>
           </div>
           <div className="flex justify-between">
             <span>Direct Email:</span>
-            <span className="text-[#66705A] font-semibold">{formData.workEmail}</span>
+            <span className="text-[#4688B2] font-semibold">{formData.workEmail}</span>
           </div>
         </div>
 
@@ -96,7 +96,7 @@ export function ContactForm() {
               consentGiven: false,
             });
           }}
-          className="px-6 py-2.5 rounded-lg bg-[#171A17] hover:bg-[#242622] text-[#F7F5EF] font-mono text-xs uppercase tracking-wider font-semibold transition-colors cursor-pointer"
+          className="px-8 py-3 rounded-xl bg-gradient-to-r from-[#9DD1EC] to-[#79B9DA] hover:from-[#A9DCF4] hover:to-[#85C4E5] text-[#10213B] font-mono text-xs uppercase tracking-wider font-bold transition-all cursor-pointer shadow-cta-blue border border-white/60"
         >
           <span>Send Another Inquiry</span>
         </button>
@@ -116,8 +116,8 @@ export function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Full Name */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="contactName" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
-            Full Name <span className="text-[#66705A]">*</span>
+          <label htmlFor="contactName" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
+            Full Name <span className="text-[#4688B2]">*</span>
           </label>
           <input
             id="contactName"
@@ -126,14 +126,14 @@ export function ContactForm() {
             placeholder="Jane Doe"
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-white border border-[#E8E6DE] text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A]"
+            className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white transition-all"
           />
         </div>
 
         {/* Work Email */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="contactEmail" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
-            Work Email <span className="text-[#66705A]">*</span>
+          <label htmlFor="contactEmail" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
+            Work Email <span className="text-[#4688B2]">*</span>
           </label>
           <input
             id="contactEmail"
@@ -142,7 +142,7 @@ export function ContactForm() {
             placeholder="jane@company.com"
             value={formData.workEmail}
             onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-white border border-[#E8E6DE] text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A]"
+            className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white transition-all"
           />
         </div>
       </div>
@@ -150,7 +150,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Company Name */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="companyName" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
+          <label htmlFor="companyName" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
             Company / Organization
           </label>
           <input
@@ -159,20 +159,20 @@ export function ContactForm() {
             placeholder="Enterprise Inc."
             value={formData.companyName}
             onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-white border border-[#E8E6DE] text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A]"
+            className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white transition-all"
           />
         </div>
 
         {/* Practice Area */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="practiceArea" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
+          <label htmlFor="practiceArea" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
             Practice Interest
           </label>
           <select
             id="practiceArea"
             value={formData.practiceArea}
             onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
-            className="w-full px-3.5 py-3 rounded-xl bg-white border border-[#E8E6DE] text-[#171A17] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A] cursor-pointer"
+            className="w-full px-3.5 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white cursor-pointer transition-all font-mono"
           >
             <option value="ai">AI &amp; Intelligent Systems</option>
             <option value="software-engineering">Software Engineering</option>
@@ -186,8 +186,8 @@ export function ContactForm() {
 
       {/* Project Scope / Description */}
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="projectScope" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
-          Project Parameters / Architecture Overview <span className="text-[#66705A]">*</span>
+        <label htmlFor="projectScope" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
+          Project Parameters / Architecture Overview <span className="text-[#4688B2]">*</span>
         </label>
         <textarea
           id="projectScope"
@@ -196,7 +196,7 @@ export function ContactForm() {
           placeholder="Describe your current system constraints, scale targets, or technical goals..."
           value={formData.projectScope}
           onChange={(e) => setFormData({ ...formData, projectScope: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl bg-white border border-[#E8E6DE] text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A]"
+          className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white transition-all"
         />
       </div>
 
@@ -208,24 +208,24 @@ export function ContactForm() {
           required
           checked={formData.consentGiven}
           onChange={(e) => setFormData({ ...formData, consentGiven: e.target.checked })}
-          className="mt-1 w-4 h-4 rounded border-[#E8E6DE] text-[#66705A] focus:ring-[#66705A] cursor-pointer"
+          className="mt-1 w-4 h-4 rounded border-[#D0E3F0] text-[#4688B2] focus:ring-[#4688B2] cursor-pointer"
         />
-        <label htmlFor="contactConsent" className="text-xs text-[#555850] leading-relaxed cursor-pointer">
+        <label htmlFor="contactConsent" className="text-xs text-[#243B53] leading-relaxed cursor-pointer">
           I agree to allow Mylotic Group to store and process my contact details to evaluate this project consultation in accordance with the corporate privacy policy.
         </label>
       </div>
 
       {/* Submit Button */}
-      <div className="pt-3 flex items-center justify-between border-t border-[#E8E6DE]">
+      <div className="pt-3 flex items-center justify-between border-t border-[#D0E3F0]/70">
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="px-8 py-3.5 rounded-lg bg-[#171A17] hover:bg-[#242622] text-[#F7F5EF] font-mono text-xs uppercase tracking-wider font-semibold transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
+          className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#9DD1EC] to-[#79B9DA] hover:from-[#A9DCF4] hover:to-[#85C4E5] text-[#10213B] font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center gap-2 cursor-pointer shadow-cta-blue hover:shadow-cta-blue-hover border border-white/60"
         >
           <span>{status === "submitting" ? "Transmitting..." : "Send Enterprise Inquiry"}</span>
-          <ArrowRight className="w-4 h-4 text-[#A5AC92]" />
+          <ArrowRight className="w-4 h-4 text-[#10213B]" />
         </button>
-        <span className="text-[11px] font-mono text-[#73766D]">
+        <span className="text-[11px] font-mono text-[#5C7690]">
           SLA: 1 BUSINESS DAY
         </span>
       </div>

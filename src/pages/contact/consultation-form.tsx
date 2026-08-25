@@ -109,42 +109,42 @@ export function EducationConsultationForm() {
 
   if (status === "success") {
     return (
-      <div className="p-8 sm:p-12 rounded-2xl bg-white border border-[#E8E6DE] shadow-card text-center animate-fade-in max-w-2xl mx-auto">
-        <div className="w-16 h-16 rounded-full bg-[#F7F5EF] text-[#66705A] border border-[#E8E6DE] flex items-center justify-center mb-6 mx-auto animate-pop">
+      <div className="p-8 sm:p-12 rounded-3xl bg-white border border-white/80 shadow-card text-center animate-fade-in max-w-2xl mx-auto">
+        <div className="w-16 h-16 rounded-full bg-[#F0F7FB] text-[#4688B2] border border-[#D0E3F0] flex items-center justify-center mb-6 mx-auto animate-pop">
           <CheckCircle2 className="w-8 h-8" />
         </div>
 
-        <span className="font-mono text-xs uppercase tracking-widest text-[#66705A] font-semibold block mb-2">
+        <span className="font-mono text-xs uppercase tracking-widest text-[#4688B2] font-semibold block mb-2">
           STATUS: CONFIRMED
         </span>
 
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#171A17] mb-3">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#10213B] mb-3">
           CONSULTATION REQUEST RECEIVED
         </h2>
 
-        <p className="text-base text-[#555850] leading-relaxed mb-6 font-normal">
+        <p className="text-base text-[#243B53] leading-relaxed mb-6 font-normal">
           Thank you. Our team will review your requirements and get in touch to schedule your free consultation.
         </p>
 
         {submittedLeadId && (
-          <div className="p-4 rounded-xl bg-[#F7F5EF] border border-[#E8E6DE] max-w-md mx-auto text-xs font-mono text-[#555850] mb-8 space-y-1.5 text-left">
+          <div className="p-4 rounded-2xl bg-[#F0F7FB] border border-[#D0E3F0] max-w-md mx-auto text-xs font-mono text-[#243B53] mb-8 space-y-1.5 text-left">
             <div className="flex justify-between">
               <span>Lead Reference:</span>
-              <span className="text-[#171A17] font-semibold">{submittedLeadId}</span>
+              <span className="text-[#10213B] font-semibold">{submittedLeadId}</span>
             </div>
             <div className="flex justify-between">
               <span>Domain:</span>
-              <span className="text-[#66705A] font-semibold">{formData.requirement}</span>
+              <span className="text-[#4688B2] font-semibold">{formData.requirement}</span>
             </div>
             {formData.preferredDate && (
               <div className="flex justify-between">
                 <span>Preferred Date:</span>
-                <span className="text-[#171A17]">{formData.preferredDate}</span>
+                <span className="text-[#10213B]">{formData.preferredDate}</span>
               </div>
             )}
             <div className="flex justify-between">
               <span>Status:</span>
-              <span className="text-[#4C5642] font-semibold">New / Review Queued</span>
+              <span className="text-[#182A43] font-semibold">New / Review Queued</span>
             </div>
           </div>
         )}
@@ -153,10 +153,10 @@ export function EducationConsultationForm() {
           <Link to="/solutions/edtech-training">
             <button
               type="button"
-              className="px-7 py-3.5 rounded-lg bg-[#171A17] hover:bg-[#242622] active:scale-[0.98] text-[#F7F5EF] font-mono text-xs uppercase tracking-wider font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-xs"
+              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#9DD1EC] to-[#79B9DA] hover:from-[#A9DCF4] hover:to-[#85C4E5] text-[#10213B] font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center gap-2 cursor-pointer shadow-cta-blue border border-white/60"
             >
               <span>BACK TO EDTECH &amp; TRAINING</span>
-              <ArrowRight className="w-4 h-4 text-[#A5AC92]" />
+              <ArrowRight className="w-4 h-4 text-[#10213B]" />
             </button>
           </Link>
         </div>
@@ -168,17 +168,17 @@ export function EducationConsultationForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="p-8 sm:p-12 rounded-2xl bg-white border border-[#E8E6DE] shadow-card flex flex-col gap-6 max-w-3xl mx-auto"
+      className="p-8 sm:p-12 rounded-3xl bg-white border border-white/80 shadow-card flex flex-col gap-6 max-w-3xl mx-auto"
     >
-      <div className="border-b border-[#E8E6DE] pb-4">
-        <div className="inline-flex items-center gap-2 mb-2 px-3 py-1 rounded-md bg-[#E8E6DE] text-xs font-mono uppercase tracking-widest text-[#4C5642] font-semibold">
-          <GraduationCap className="w-4 h-4 text-[#66705A]" />
+      <div className="border-b border-[#D0E3F0]/70 pb-4">
+        <div className="inline-flex items-center gap-2 mb-2 px-3.5 py-1 rounded-full bg-[#F0F7FB] text-xs font-mono uppercase tracking-widest text-[#4688B2] font-semibold border border-[#D0E3F0]">
+          <GraduationCap className="w-4 h-4 text-[#4688B2]" />
           <span>EDUCATION CONSULTATION INTAKE</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#171A17]">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#10213B]">
           Schedule a Free EdTech Consultation
         </h2>
-        <p className="text-xs sm:text-sm text-[#555850] mt-1 font-normal">
+        <p className="text-xs sm:text-sm text-[#243B53] mt-1 font-normal">
           Let&apos;s discuss your training, learning platform, or education technology requirements.
         </p>
       </div>
@@ -193,8 +193,8 @@ export function EducationConsultationForm() {
       {/* Row 1: Full Name & Work Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="fullName" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
-            Full Name <span className="text-[#66705A]">*</span>
+          <label htmlFor="fullName" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
+            Full Name <span className="text-[#4688B2]">*</span>
           </label>
           <input
             id="fullName"
@@ -206,16 +206,16 @@ export function EducationConsultationForm() {
               setFormData({ ...formData, fullName: e.target.value });
               if (errors.fullName) setErrors({ ...errors, fullName: "" });
             }}
-            className={`w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border ${
-              errors.fullName ? "border-red-500 focus:ring-red-500" : "border-[#E8E6DE] focus:ring-[#66705A]"
-            } text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 transition-all`}
+            className={`w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border ${
+              errors.fullName ? "border-red-500 focus:ring-red-500" : "border-[#D0E3F0] focus:ring-[#4688B2]"
+            } text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:bg-white transition-all`}
           />
           {errors.fullName && <span className="text-[11px] text-red-600 font-medium">{errors.fullName}</span>}
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="email" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
-            Work Email <span className="text-[#66705A]">*</span>
+          <label htmlFor="email" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
+            Work Email <span className="text-[#4688B2]">*</span>
           </label>
           <input
             id="email"
@@ -227,9 +227,9 @@ export function EducationConsultationForm() {
               setFormData({ ...formData, email: e.target.value });
               if (errors.email) setErrors({ ...errors, email: "" });
             }}
-            className={`w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border ${
-              errors.email ? "border-red-500 focus:ring-red-500" : "border-[#E8E6DE] focus:ring-[#66705A]"
-            } text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 transition-all`}
+            className={`w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border ${
+              errors.email ? "border-red-500 focus:ring-red-500" : "border-[#D0E3F0] focus:ring-[#4688B2]"
+            } text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:bg-white transition-all`}
           />
           {errors.email && <span className="text-[11px] text-red-600 font-medium">{errors.email}</span>}
         </div>
@@ -238,7 +238,7 @@ export function EducationConsultationForm() {
       {/* Row 2: Phone & Company */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="phone" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
+          <label htmlFor="phone" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
             Phone Number
           </label>
           <input
@@ -250,15 +250,15 @@ export function EducationConsultationForm() {
               setFormData({ ...formData, phone: e.target.value });
               if (errors.phone) setErrors({ ...errors, phone: "" });
             }}
-            className={`w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border ${
-              errors.phone ? "border-red-500 focus:ring-red-500" : "border-[#E8E6DE] focus:ring-[#66705A]"
-            } text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 transition-all`}
+            className={`w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border ${
+              errors.phone ? "border-red-500 focus:ring-red-500" : "border-[#D0E3F0] focus:ring-[#4688B2]"
+            } text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:bg-white transition-all`}
           />
           {errors.phone && <span className="text-[11px] text-red-600 font-medium">{errors.phone}</span>}
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="company" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
+          <label htmlFor="company" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
             Company / Organization
           </label>
           <input
@@ -267,7 +267,7 @@ export function EducationConsultationForm() {
             placeholder="Acme Corp / Institute"
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border border-[#E8E6DE] text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A] transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white transition-all"
           />
         </div>
       </div>
@@ -275,7 +275,7 @@ export function EducationConsultationForm() {
       {/* Row 3: Job Title & Location */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="jobTitle" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
+          <label htmlFor="jobTitle" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
             Job Title
           </label>
           <input
@@ -284,12 +284,12 @@ export function EducationConsultationForm() {
             placeholder="VP of Engineering / L&amp;D Director"
             value={formData.jobTitle}
             onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border border-[#E8E6DE] text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A] transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white transition-all"
           />
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="location" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
+          <label htmlFor="location" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
             Location
           </label>
           <input
@@ -298,22 +298,22 @@ export function EducationConsultationForm() {
             placeholder="City, Country"
             value={formData.location}
             onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border border-[#E8E6DE] text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A] transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white transition-all"
           />
         </div>
       </div>
 
       {/* Row 4: What are you looking for? * */}
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="requirement" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
-          What are you looking for? <span className="text-[#66705A]">*</span>
+        <label htmlFor="requirement" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
+          What are you looking for? <span className="text-[#4688B2]">*</span>
         </label>
         <select
           id="requirement"
           required
           value={formData.requirement}
           onChange={(e) => setFormData({ ...formData, requirement: e.target.value as EdTechRequirement })}
-          className="w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border border-[#E8E6DE] text-[#171A17] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A] cursor-pointer transition-all"
+          className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white cursor-pointer transition-all font-mono"
         >
           {requirementOptions.map((opt) => (
             <option key={opt} value={opt}>
@@ -326,8 +326,8 @@ export function EducationConsultationForm() {
       {/* Row 5: Preferred Date & Time */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="preferredDate" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-[#66705A]" />
+          <label htmlFor="preferredDate" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5 text-[#4688B2]" />
             <span>Preferred Consultation Date</span>
           </label>
           <input
@@ -339,23 +339,23 @@ export function EducationConsultationForm() {
               setFormData({ ...formData, preferredDate: e.target.value });
               if (errors.preferredDate) setErrors({ ...errors, preferredDate: "" });
             }}
-            className={`w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border ${
-              errors.preferredDate ? "border-red-500 focus:ring-red-500" : "border-[#E8E6DE] focus:ring-[#66705A]"
-            } text-[#171A17] text-xs sm:text-sm focus:outline-none focus:ring-2 transition-all cursor-pointer`}
+            className={`w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border ${
+              errors.preferredDate ? "border-red-500 focus:ring-red-500" : "border-[#D0E3F0] focus:ring-[#4688B2]"
+            } text-[#10213B] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:bg-white transition-all cursor-pointer`}
           />
           {errors.preferredDate && <span className="text-[11px] text-red-600 font-medium">{errors.preferredDate}</span>}
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="preferredTime" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5 text-[#66705A]" />
+          <label htmlFor="preferredTime" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold flex items-center gap-1.5">
+            <Clock className="w-3.5 h-3.5 text-[#4688B2]" />
             <span>Preferred Time Slot</span>
           </label>
           <select
             id="preferredTime"
             value={formData.preferredTime}
             onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border border-[#E8E6DE] text-[#171A17] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A] cursor-pointer transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white cursor-pointer transition-all font-mono"
           >
             {timeSlotOptions.map((slot) => (
               <option key={slot} value={slot}>
@@ -368,7 +368,7 @@ export function EducationConsultationForm() {
 
       {/* Row 6: Message / Requirements */}
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="message" className="text-xs font-mono uppercase tracking-wider text-[#242622] font-semibold">
+        <label htmlFor="message" className="text-xs font-mono uppercase tracking-wider text-[#182A43] font-semibold">
           Message / Requirements
         </label>
         <textarea
@@ -377,22 +377,22 @@ export function EducationConsultationForm() {
           placeholder="Briefly describe your team size, current technical challenges, or target implementation timeline..."
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl bg-[#F7F5EF] border border-[#E8E6DE] text-[#171A17] placeholder:text-[#73766D] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#66705A] transition-all"
+          className="w-full px-4 py-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0] text-[#10213B] placeholder:text-[#5C7690] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#4688B2] focus:bg-white transition-all"
         />
       </div>
 
       {/* Submit CTA */}
-      <div className="pt-4 border-t border-[#E8E6DE] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="pt-4 border-t border-[#D0E3F0]/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-full sm:w-auto px-8 py-4 rounded-lg bg-[#171A17] hover:bg-[#242622] active:scale-[0.98] text-[#F7F5EF] font-mono text-xs uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs group"
+          className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#9DD1EC] to-[#79B9DA] hover:from-[#A9DCF4] hover:to-[#85C4E5] text-[#10213B] font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-cta-blue hover:shadow-cta-blue-hover border border-white/60"
         >
           <span>{status === "submitting" ? "Processing Booking..." : "BOOK FREE CONSULTATION"}</span>
-          <ArrowRight className="w-4 h-4 text-[#A5AC92] group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="w-4 h-4 text-[#10213B] group-hover:translate-x-1 transition-transform" />
         </button>
 
-        <span className="text-[11px] font-mono text-[#73766D]">
+        <span className="text-[11px] font-mono text-[#5C7690]">
           NO COMMITMENT REQUIRED &bull; 100% CONFIDENTIAL
         </span>
       </div>

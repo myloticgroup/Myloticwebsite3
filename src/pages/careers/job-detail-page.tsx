@@ -19,11 +19,11 @@ export function JobDetailPage() {
 
   if (!job) {
     return (
-      <Section spacing="spacious" className="py-24 text-center">
+      <Section spacing="spacious" className="py-24 text-center bg-[#EAF6FC] min-h-[60vh] flex items-center">
         <Container size="default">
-          <h1 className="text-3xl font-bold text-[#171A17]">Job Requisition Not Found</h1>
-          <p className="mt-4 text-[#555850]">The requested career position does not exist or has been closed.</p>
-          <Link to="/careers" className="mt-6 inline-block text-xs font-mono font-semibold uppercase text-[#66705A]">
+          <h1 className="text-3xl font-bold text-[#10213B]">Job Requisition Not Found</h1>
+          <p className="mt-4 text-[#243B53]">The requested career position does not exist or has been closed.</p>
+          <Link to="/careers" className="mt-6 inline-block text-xs font-mono font-semibold uppercase text-[#4688B2] hover:underline">
             &larr; Back to all careers
           </Link>
         </Container>
@@ -36,20 +36,25 @@ export function JobDetailPage() {
       {/* 01 Editorial Requisition Hero */}
       <Section
         spacing="spacious"
-        className="border-b border-[#E8E6DE] bg-[#F7F5EF] text-[#171A17] pt-12 sm:pt-16 pb-16 sm:pb-24 relative overflow-hidden"
+        className="border-b border-[#D0E3F0] bg-atmospheric-hero text-[#10213B] pt-14 sm:pt-20 pb-16 sm:pb-24 relative overflow-hidden"
       >
-        <Container size="default">
+        {/* Background Grid & Ambient Glow */}
+        <div className="absolute inset-0 bg-tech-grid-fine opacity-50 pointer-events-none" />
+        <div className="ambient-glow-white w-[48rem] h-[48rem] -top-20 left-1/4 opacity-80" />
+        <div className="ambient-glow-icy w-[36rem] h-[36rem] -top-10 -left-10 opacity-70" />
+
+        <Container size="default" className="relative z-10">
           <Breadcrumb
             items={[
               { label: "Careers", href: "/careers" },
               { label: job.title },
             ]}
-            className="mb-8 text-[#73766D]"
+            className="mb-8 text-[#5C7690]"
           />
 
           <Link
             to="/careers"
-            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase text-[#66705A] hover:text-[#4C5642] transition-colors mb-6 group font-semibold"
+            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase text-[#4688B2] hover:text-[#10213B] transition-colors mb-6 group font-semibold"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
             <span>Back to all open roles</span>
@@ -57,31 +62,31 @@ export function JobDetailPage() {
 
           <div className="max-w-4xl">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-3 py-1 rounded-md bg-[#E8E6DE] text-[#4C5642] text-xs font-mono uppercase font-semibold">
+              <span className="px-3 py-1 rounded-full bg-white border border-white/80 text-[#10213B] text-xs font-mono uppercase font-semibold shadow-2xs">
                 {job.department}
               </span>
-              <span className="px-3 py-1 rounded-md bg-white border border-[#E8E6DE] text-[#555850] text-xs font-mono uppercase">
+              <span className="px-3 py-1 rounded-full bg-white border border-white/80 text-[#243B53] text-xs font-mono uppercase shadow-2xs">
                 {job.workplaceType}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#171A17] leading-[1.12]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#10213B] leading-[1.08]">
               {job.title}
             </h1>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-[#73766D]">
-              <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#66705A]" />
+            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-[#5C7690]">
+              <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-white/80 shadow-2xs">
+                <MapPin className="w-3.5 h-3.5 text-[#4688B2]" />
                 <span>{job.location}</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <Briefcase className="w-3.5 h-3.5 text-[#66705A]" />
+              <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-white/80 shadow-2xs">
+                <Briefcase className="w-3.5 h-3.5 text-[#4688B2]" />
                 <span>
                   {job.experienceLevel} • {job.employmentType}
                 </span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-[#66705A]" />
+              <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-white/80 shadow-2xs">
+                <Calendar className="w-3.5 h-3.5 text-[#4688B2]" />
                 <span>Posted {job.postedAt}</span>
               </div>
             </div>
@@ -92,34 +97,36 @@ export function JobDetailPage() {
       {/* 02 Job Details & Application Form Split Layout */}
       <Section
         spacing="spacious"
-        className="border-b border-[#E8E6DE] bg-[#FFFFFF] text-[#171A17] py-16 sm:py-24"
+        className="border-b border-[#D0E3F0] bg-[#DCEFF8] text-[#10213B] py-20 sm:py-28 relative overflow-hidden"
       >
-        <Container size="default">
+        <div className="absolute inset-0 bg-dots-pattern opacity-40 pointer-events-none" />
+
+        <Container size="default" className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Role Details & Requirements (Span 7) */}
-            <div className="lg:col-span-7 flex flex-col gap-10">
+            <div className="lg:col-span-7 flex flex-col gap-8">
               {/* Summary */}
-              <div>
-                <span className="font-mono text-xs uppercase tracking-widest text-[#66705A] font-semibold block mb-2">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-white/80 shadow-card">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#4688B2] font-semibold block mb-2">
                   ROLE OVERVIEW
                 </span>
-                <p className="text-base text-[#555850] leading-relaxed font-normal">
+                <p className="text-base text-[#243B53] leading-relaxed font-normal">
                   {job.summary}
                 </p>
               </div>
 
               {/* Responsibilities */}
-              <div>
-                <span className="font-mono text-xs uppercase tracking-widest text-[#66705A] font-semibold block mb-3">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-white/80 shadow-card">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#4688B2] font-semibold block mb-4">
                   PRIMARY RESPONSIBILITIES
                 </span>
                 <div className="space-y-3">
                   {job.responsibilities.map((resp, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-3 text-sm text-[#555850]"
+                      className="flex items-start gap-3 text-sm text-[#243B53] p-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0]"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#66705A] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#4688B2] shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{resp}</span>
                     </div>
                   ))}
@@ -127,17 +134,17 @@ export function JobDetailPage() {
               </div>
 
               {/* Requirements */}
-              <div>
-                <span className="font-mono text-xs uppercase tracking-widest text-[#66705A] font-semibold block mb-3">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-white/80 shadow-card">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#4688B2] font-semibold block mb-4">
                   REQUIREMENTS &amp; PREREQUISITES
                 </span>
                 <div className="space-y-3">
                   {job.requirements.map((req, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-3 text-sm text-[#555850]"
+                      className="flex items-start gap-3 text-sm text-[#243B53] p-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0]"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#4C5642] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#4688B2] shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{req}</span>
                     </div>
                   ))}
@@ -146,17 +153,17 @@ export function JobDetailPage() {
 
               {/* Nice to have */}
               {job.niceToHave && job.niceToHave.length > 0 && (
-                <div>
-                  <span className="font-mono text-xs uppercase tracking-widest text-[#66705A] font-semibold block mb-3">
+                <div className="p-6 sm:p-8 rounded-3xl bg-white border border-white/80 shadow-card">
+                  <span className="font-mono text-xs uppercase tracking-widest text-[#4688B2] font-semibold block mb-4">
                     NICE TO HAVE / ADVANTAGES
                   </span>
                   <div className="space-y-3">
                     {job.niceToHave.map((nth, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-3 text-sm text-[#73766D]"
+                        className="flex items-start gap-3 text-sm text-[#243B53] p-3 rounded-xl bg-[#F0F7FB] border border-[#D0E3F0]"
                       >
-                        <span className="text-[#66705A] font-bold">•</span>
+                        <span className="text-[#4688B2] font-bold">•</span>
                         <span className="leading-relaxed">{nth}</span>
                       </div>
                     ))}
@@ -165,17 +172,17 @@ export function JobDetailPage() {
               )}
 
               {/* Skills Tag Group */}
-              <div className="pt-6 border-t border-[#E8E6DE]">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#73766D] font-semibold block mb-3">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-white/80 shadow-card">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#5C7690] font-semibold block mb-3">
                   PRIMARY TECHNICAL SKILLS
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {job.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-md text-xs font-mono bg-[#F7F5EF] text-[#242622] border border-[#E8E6DE] flex items-center gap-1.5"
+                      className="px-3 py-1 rounded-full text-xs font-mono bg-[#F0F7FB] text-[#182A43] border border-[#D0E3F0] flex items-center gap-1.5 shadow-2xs hover:border-[#4688B2]/40 transition-colors"
                     >
-                      <Cpu className="w-3 h-3 text-[#66705A]" />
+                      <Cpu className="w-3 h-3 text-[#4688B2]" />
                       <span>{skill}</span>
                     </span>
                   ))}
