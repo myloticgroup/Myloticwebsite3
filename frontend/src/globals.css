@@ -1,0 +1,433 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Premium Bento Cool-Gray Palette */
+    --background: #7CC7EA;
+    --foreground: #101418;
+
+    --card: #FFFFFF;
+    --card-foreground: #101418;
+
+    --popover: #FFFFFF;
+    --popover-foreground: #101418;
+
+    --primary: #101418;
+    --primary-foreground: #EEF3F8;
+
+    --secondary: #F0F4F8;
+    --secondary-foreground: #101418;
+
+    --muted: #F0F4F8;
+    --muted-foreground: #5F6872;
+
+    --accent: #66705A;
+    --accent-foreground: #EEF3F8;
+
+    --destructive: #8B3A3A;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #E1E7EF;
+    --input: #E1E7EF;
+    --ring: #66705A;
+
+    --radius: 1.25rem;
+
+    /* Custom Bento Tokens */
+    --surface-bento-base: #7CC7EA;
+    --surface-bento-card: #FFFFFF;
+    --surface-bento-secondary: #F0F4F8;
+    --surface-stone: #E1E7EF;
+    --surface-dark: #101418;
+    --surface-graphite: #1B2026;
+    --accent-olive: #66705A;
+    --accent-olive-dark: #4C5642;
+    --accent-sage: #A5AC92;
+    --accent-gold: #7CC7EA;
+    --text-primary: #101418;
+    --text-secondary: #5F6872;
+    --text-muted: #7A8490;
+
+    /* Fonts */
+    --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-jetbrains-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Bento Soft Elevation Shadows */
+.shadow-bento {
+  box-shadow: 0 10px 30px -5px rgba(16, 20, 24, 0.04), 0 4px 12px -2px rgba(16, 20, 24, 0.02);
+}
+.shadow-bento-hover {
+  box-shadow: 0 20px 40px -10px rgba(16, 20, 24, 0.08), 0 8px 20px -4px rgba(16, 20, 24, 0.04);
+}
+.shadow-2xs {
+  box-shadow: 0 1px 2px rgba(16, 20, 24, 0.04);
+}
+.shadow-xs {
+  box-shadow: 0 1px 3px rgba(16, 20, 24, 0.06), 0 1px 2px rgba(16, 20, 24, 0.04);
+}
+.shadow-card {
+  box-shadow: 0 8px 24px -4px rgba(16, 20, 24, 0.04), 0 2px 8px -1px rgba(16, 20, 24, 0.02);
+}
+.shadow-card-hover {
+  box-shadow: 0 16px 36px -6px rgba(16, 20, 24, 0.08), 0 6px 16px -2px rgba(16, 20, 24, 0.03);
+}
+.shadow-dropdown {
+  box-shadow: 0 16px 40px -6px rgba(16, 20, 24, 0.1), 0 6px 16px -2px rgba(16, 20, 24, 0.04);
+}
+.shadow-focus-ring {
+  box-shadow: 0 0 0 3px rgba(102, 112, 90, 0.25);
+}
+
+/* ===================================================
+   PHASE 7.13 & PHASE 7.16 GPU-ACCELERATED ANIMATIONS
+   =================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseBeacon {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.5;
+  }
+}
+
+@keyframes checkmarkPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Phase 7.16 Subtle Specialized Domain Keyframes */
+@keyframes aiProcessPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(102, 112, 90, 0));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 3px rgba(102, 112, 90, 0.35));
+  }
+}
+
+@keyframes nodeFlowPulse {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-1.5px) rotate(1.5deg);
+  }
+  66% {
+    transform: translateY(1px) rotate(-1deg);
+  }
+}
+
+@keyframes cloudLineFlow {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(2px);
+    opacity: 1;
+  }
+}
+
+@keyframes strokeDashFlow {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-beacon {
+  animation: pulseBeacon 2.5s ease-in-out infinite;
+}
+
+.animate-pop {
+  animation: checkmarkPop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-ai-pulse {
+  animation: aiProcessPulse 2.8s ease-in-out infinite;
+}
+
+.animate-node-flow {
+  animation: nodeFlowPulse 3.5s ease-in-out infinite;
+}
+
+.animate-cloud-flow {
+  animation: cloudLineFlow 3s ease-in-out infinite;
+}
+
+.animate-dash-flow {
+  stroke-dasharray: 4, 4;
+  animation: strokeDashFlow 4s linear infinite;
+}
+
+/* Animation Delays */
+.delay-75 {
+  animation-delay: 75ms;
+}
+
+.delay-150 {
+  animation-delay: 150ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Micro-interaction Helper Classes */
+.transition-editorial {
+  transition-property: color, background-color, border-color, transform, box-shadow, opacity;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 300ms;
+}
+
+.transition-card-interactive {
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 300ms ease-out,
+              border-color 300ms ease-out;
+}
+
+/* Editorial Gradient Text */
+.gradient-text-olive {
+  background: linear-gradient(135deg, #171A17 30%, #66705A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #4C5642 0%, #66705A 60%, #C5A880 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Seamless Infinite Technology Marquee Animations */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 36s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-fast {
+  animation-duration: 24s;
+}
+
+.animate-marquee-slow {
+  animation-duration: 42s;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+/* Edge Fade Mask for Marquee Lanes */
+.marquee-fade-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* Glassmorphism & Surface Utilities */
+.glass-panel {
+  background: rgba(247, 245, 239, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 230, 222, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(23, 26, 23, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 56, 48, 0.7);
+}
+
+/* Architectural Grid Background Utility */
+.bg-arch-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(232, 230, 222, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232, 230, 222, 0.4) 1px, transparent 1px);
+}
+
+.bg-arch-grid-dark {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(51, 56, 48, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(51, 56, 48, 0.4) 1px, transparent 1px);
+}
+
+/* ===================================================
+   ACCESSIBILITY: RESPECT REDUCED MOTION PREFERENCES
+   =================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none !important;
+    transform: none !important;
+    width: auto !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+}
+
+
+
+/* ===================================================
+   REFERENCE HERO — SOFT BLUE / GLASS / TECH FIELD
+   =================================================== */
+.hero-sky {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(255,255,255,.34), transparent 31%),
+    radial-gradient(circle at 16% 54%, rgba(231,250,255,.28), transparent 24%),
+    radial-gradient(circle at 88% 72%, rgba(54,170,218,.24), transparent 30%),
+    linear-gradient(135deg, #73C4E8 0%, #8ED4EF 48%, #6CBEE4 100%);
+}
+
+.hero-wave-lines {
+  background:
+    radial-gradient(ellipse at 30% 60%, transparent 0 34%, rgba(255,255,255,.20) 34.2% 34.4%, transparent 34.7%),
+    radial-gradient(ellipse at 72% 42%, transparent 0 30%, rgba(255,255,255,.16) 30.2% 30.4%, transparent 30.8%),
+    linear-gradient(120deg, transparent 0 44%, rgba(255,255,255,.14) 44.2% 44.35%, transparent 44.6% 100%);
+  animation: heroAmbientDrift 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroAmbientDrift {
+  from { transform: translate3d(-1%, -1%, 0) scale(1); opacity: .65; }
+  to { transform: translate3d(1%, 1%, 0) scale(1.03); opacity: .9; }
+}
+
+.hero-robot-wrap {
+  animation: heroRobotFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroRobotFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -7px, 0); }
+}
+
+@media (max-width: 1023px) {
+  .hero-robot-wrap {
+    left: -8%;
+    width: 320px;
+    opacity: .9;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-robot-wrap {
+    left: -18%;
+    bottom: 70px;
+    width: 250px;
+    opacity: .65;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-robot-wrap {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+export * from "./hero-section";
+export * from "./hero-architecture";
+export * from "./positioning-section";
+export * from "./capabilities-section";
+export * from "./engineering-section";
+export * from "./industries-section";
+export * from "./work-section";
+export * from "./careers-section";
+export * from "./blog-section";
+export * from "./cta-section";
+export * from "./tech-marquee";
+
