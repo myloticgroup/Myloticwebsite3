@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.*
+
+# Build outputs
+/dist/
+/build/
+/server/dist/
+
+# Uploads & local storage
+/uploads/
+/public/uploads/
+!/public/uploads/.gitkeep
+
+# Environment files
+.env*
+!.env.example
+
+# Logs & Debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS & Misc
+.DS_Store
+*.pem
+*.tsbuildinfo
+.vercel/
