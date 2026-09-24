@@ -60,7 +60,9 @@ export async function sendEmailViaEmailJS(payload: ContactEmailPayload): Promise
       SERVICE_ID,
       TEMPLATE_ID,
       templateParams,
-      PUBLIC_KEY
+      {
+        publicKey: PUBLIC_KEY,
+      }
     );
 
     if (response.status === 200 || response.text === "OK") {
@@ -69,13 +71,15 @@ export async function sendEmailViaEmailJS(payload: ContactEmailPayload): Promise
 
     return {
       success: false,
-      message: `EmailJS responded with status: ${response.status}`,
+      message: `EmailJS responded with status: ${response.status} (${response.text})`,
     };
-  } catch (error) {
+  } catch (error: any) {
     console.error("[EmailJS] Send error:", error);
+    const detail = error?.text || error?.message || (typeof error === "string" ? error : JSON.stringify(error));
     return {
       success: false,
-      message: (error as Error)?.message || "Failed to send email via EmailJS",
+      message: detail || "Failed to send email via EmailJS",
     };
   }
 }
+
