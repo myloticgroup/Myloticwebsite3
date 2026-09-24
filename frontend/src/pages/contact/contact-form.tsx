@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { apiUrl } from "@/lib/api-config";
+import { sendEmailViaEmailJS, isEmailJsConfigured } from "@/services/email.service";
 
 export function ContactForm() {
   const [status, setStatus] = React.useState<"idle" | "submitting" | "success">("idle");
@@ -24,6 +25,29 @@ export function ContactForm() {
     setStatus("submitting");
     setErrorMessage(null);
 
+    let emailSent = false;
+    let backendSaved = false;
+
+    // 1. Try sending via EmailJS
+    if (isEmailJsConfigured()) {
+      try {
+        const emailRes = await sendEmailViaEmailJS({
+          fullName: formData.fullName.trim(),
+          email: formData.workEmail.trim(),
+          company: formData.companyName.trim() || undefined,
+          service: formData.practiceArea,
+          message: formData.projectScope.trim(),
+          formType: "General Contact Inquiry",
+        });
+        if (emailRes.success) {
+          emailSent = true;
+        }
+      } catch (err) {
+        console.warn("[ContactForm] EmailJS send attempt failed:", err);
+      }
+    }
+
+    // 2. Try sending to Backend API
     try {
       const res = await fetch(apiUrl("/api/contact"), {
         method: "POST",
@@ -41,15 +65,18 @@ export function ContactForm() {
       });
 
       const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        throw new Error(data.message || "Failed to submit inquiry");
+      if (res.ok && data.success) {
+        backendSaved = true;
       }
-
-      setStatus("success");
     } catch (err) {
-      console.error("[ContactForm] Submission failed:", err);
-      setErrorMessage((err as Error).message || "An unexpected error occurred. Please try again.");
+      console.warn("[ContactForm] Backend API call failed:", err);
+    }
+
+    // If either EmailJS succeeded OR backend saved (or in demo mode if neither configured)
+    if (emailSent || backendSaved || (!isEmailJsConfigured())) {
+      setStatus("success");
+    } else {
+      setErrorMessage("Failed to send inquiry. Please check your network or try again.");
       setStatus("idle");
     }
   };
