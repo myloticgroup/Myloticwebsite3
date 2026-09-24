@@ -53,9 +53,9 @@ export function LoginPage() {
     <div className="min-h-screen bg-[#0B0F14] text-[#E1E7EF] flex flex-col justify-between selection:bg-[#66705A] selection:text-white">
       {/* Header Bar */}
       <header className="p-6 flex items-center justify-between border-b border-[#1E2630]">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-[#66705A] text-white flex items-center justify-center font-bold text-sm font-mono">
-            M
+        <Link to="/" className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg overflow-hidden bg-white flex items-center justify-center shrink-0 border border-white/10 shadow-xs">
+            <img src="/logo.png" alt="Mylotic Group" className="w-full h-full object-cover" />
           </div>
           <span className="font-bold text-sm text-white tracking-tight">Mylotic Group</span>
         </Link>

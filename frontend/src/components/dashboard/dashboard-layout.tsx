@@ -54,9 +54,9 @@ export function DashboardLayout() {
       <aside className="hidden md:flex flex-col w-64 bg-[#101418] border-r border-[#232A32] shrink-0 min-h-screen">
         {/* Header */}
         <div className="p-6 border-b border-[#232A32] flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-[#66705A] text-white flex items-center justify-center font-bold text-sm font-mono shadow-xs group-hover:scale-105 transition-transform">
-              M
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <div className="w-8 h-8 rounded-lg overflow-hidden bg-white flex items-center justify-center shrink-0 shadow-xs border border-white/10 group-hover:scale-105 transition-transform">
+              <img src="/logo.png" alt="Mylotic Group" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-sm text-white tracking-tight leading-tight">
@@ -140,8 +140,8 @@ export function DashboardLayout() {
       {/* Mobile Top Navigation */}
       <div className="md:hidden bg-[#101418] border-b border-[#232A32] p-4 flex items-center justify-between sticky top-0 z-40">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-[#66705A] text-white flex items-center justify-center font-bold text-xs font-mono">
-            M
+          <div className="w-7 h-7 rounded-lg overflow-hidden bg-white flex items-center justify-center shrink-0 border border-white/10">
+            <img src="/logo.png" alt="Mylotic Group" className="w-full h-full object-cover" />
           </div>
           <span className="font-bold text-xs text-white">Mylotic Portal</span>
         </Link>
