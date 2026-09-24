@@ -27,6 +27,7 @@ export function ContactForm() {
 
     let emailSent = false;
     let backendSaved = false;
+    let failureDetail = "";
 
     // 1. Try sending via EmailJS
     if (isEmailJsConfigured()) {
@@ -41,9 +42,12 @@ export function ContactForm() {
         });
         if (emailRes.success) {
           emailSent = true;
+        } else {
+          failureDetail = emailRes.message || "Email delivery failed";
         }
       } catch (err) {
         console.warn("[ContactForm] EmailJS send attempt failed:", err);
+        failureDetail = (err as Error)?.message || "Email service error";
       }
     }
 
@@ -72,11 +76,13 @@ export function ContactForm() {
       console.warn("[ContactForm] Backend API call failed:", err);
     }
 
-    // If either EmailJS succeeded OR backend saved (or in demo mode if neither configured)
-    if (emailSent || backendSaved || (!isEmailJsConfigured())) {
+    // If either EmailJS succeeded OR backend saved
+    if (emailSent || backendSaved) {
       setStatus("success");
     } else {
-      setErrorMessage("Failed to send inquiry. Please check your network or try again.");
+      setErrorMessage(
+        failureDetail || "Failed to send inquiry. Please check your EmailJS service setup or network connection."
+      );
       setStatus("idle");
     }
   };
